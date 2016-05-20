@@ -1,0 +1,373 @@
+.without_sidebar{
+  form{
+    padding: 34px;
+    width: calc(100% - 68px);
+    position: relative;
+    @include clear();
+    input, textarea, select{
+      width: 96%;
+      border-radius: 5px;
+      padding: 10px 2%;
+      border: 1px solid $filter_activ;
+      background: $input_edit;
+      color: $input_color;
+      font-size: 14px;
+      font-family: "proxima_nova_regular";
+    }
+    input{
+      height: 21px;
+    }
+    select{
+      width: 100%;
+    }
+    textarea{
+      height: 111px;
+    }
+    img{
+      max-width: 100%;
+    }
+    li{
+      list-style-type: none;
+    }
+    fieldset{
+      background: white;
+      border-radius: 5px;
+      padding: 76px 2% 33px;
+      width: 96%;
+      margin-bottom: 34px;
+      border-bottom: 1px solid $filter_activ;
+      legend{
+        height: 0;
+        margin: 0;
+        padding: 0;
+        margin: 0;
+        span{
+          font-family: "proxima_nova_rgbold";
+          position: relative;
+          top: 27px;
+          font-size: 16px;
+          line-height: 20px;
+          color: $filter_activ_color;
+          font-weight: bold;
+        }
+      }
+      li, .div_li{
+        margin-bottom: 34px;
+        &:last-child{
+          margin-bottom: 0;
+        }
+        label{
+          margin-bottom: 8px;
+          display: block;
+          color: $filter_activ_color;
+          font-family: "proxima_nova_regular";
+        }
+      }
+      li.picture{
+        div.picture{
+          display: block;
+          overflow: hidden;
+          position: relative;
+          height: 254px;
+          overflow: hidden;
+          background: white;
+          border: 1px dashed $filter_activ;
+          border-radius: 5px;
+          text-align: center;
+          &:hover{
+            .image_phone{
+              opacity: 0.1;
+            }
+          }
+          label{
+            display: none;
+          }
+          input[type="file"]{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            cursor: pointer;
+            z-index: 200;
+          }
+          .phone{
+             position: relative;
+             display: block;
+             height: 100%;
+             background: white;
+             border-radius: 5px;
+             z-index: 150;
+             padding: 5px;
+          }
+          .image_tree{
+            margin-top: 73px;
+            @include s("tree");           
+            margin-bottom: 15px;
+            z-index: 150;
+          }
+          p{
+            color: $filter_activ;
+            z-index: 150;
+            span{
+              color: $title;
+            }
+          }
+          .image_phone{
+            position: absolute;;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 170;
+            @include transition(opacity $header_time);
+            background: white;
+            img{
+              top: 50%;
+              left: 50%;
+              @include translate(-50%, -50%);
+              position:absolute;
+              max-height: 100%;
+            }
+          }   
+          .no_picture{
+            z-index: 50;
+          }       
+        }
+     
+      }
+      .activeadmin-translate{
+        fieldset{
+          padding: 0;
+          width: 100%;
+        }
+      }
+      .has_many_container {
+        input[type="checkbox"].my_remove + label{
+          @include button();
+          min-height: 0;
+          margin-top: -10px;
+          margin-bottom: 22px;
+          &:before{
+            display: none;
+          }
+        }
+        .has_many_fields_new {
+          input[type="checkbox"].my_remove + label{
+            display: none!important;
+          }
+        }
+      }
+    }
+    fieldset.choices{
+      legend{
+        height: auto;
+      }
+    }
+    fieldset.label_none{
+      padding-top: 33px;
+    }
+    fieldset.inputs {
+      fieldset{
+        padding: 0;
+        border: 0;
+        margin-bottom: 0;
+        
+      }
+    }
+    fieldset.actions{
+      background: none;
+      border: 0;
+      margin-bottom: 0;
+      padding-top: 11px;
+      padding-bottom: 0;
+    }
+    
+    fieldset fieldset.actions{
+      border: 0;
+      width: 100%;
+      padding: 0;   
+      background: white; 
+      border-radius: 0; 
+    }
+    
+    fieldset.left{
+      width: 70%;
+      float: left;
+    }
+    fieldset.right{
+      width: 19.6%;
+      float: right;
+    }
+  }
+}
+
+.select2-container-multi .select2-choices{
+  width: 96%;
+  min-width: 180px;
+  border-radius: 5px;
+  padding: 10px 2%;
+  border: 1px solid $filter_activ;
+  background: $input_edit;
+  color: $input_color;
+  font-size: 14px;
+}
+.select2-container{
+  display: block;
+}
+.choices-group{
+  margin-top: 8px;
+  .choice{
+   display: inline-block;
+    width: 100%;
+    min-width: 53px;
+    max-width: 31%;
+  }
+  li{
+    display: inline-block;
+    margin-bottom: 0!important;
+    label{
+      position: relative;
+      padding-left: 22px;     
+      // margin-right: 33px;
+      cursor: pointer;
+      &:before{
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        content: "";
+        width: 14px;
+        height: 14px;
+        border: 1px solid $radio_but;
+        border-radius: 50%;
+      }
+    }    
+    input[type="radio"]{
+      padding: 0;
+      width: 0;
+      height: 0;
+      display: none;
+      opacity: 0;
+      &:checked + label:before{
+        border: 5px solid $radio_but_chec;
+        width: 6px;
+        height: 6px;
+      }
+    }
+  }
+}
+
+.field_with_errors{
+  input,
+  textarea{
+    border: 1px solid $form_border !important;
+  }
+  label{
+    color: $form_border !important;
+  }
+}
+
+// pop_up_frame
+.cke_dialog{
+  .cke_dialog_body{
+    background-color:#fff;
+    border: 1px solid $filter_activ;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .cke_dialog_title{
+    background: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    text-shadow: none;
+    border-bottom: 1px $filter_activ;
+  }
+  input.cke_dialog_ui_input_text,
+  input.cke_dialog_ui_input_password,
+  textarea.cke_dialog_ui_input_textarea{
+    font-family: "proxima_nova_regular";
+    font-size:14px;
+    border-radius: 5px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid $filter_activ;
+    border-top-color: $filter_activ;
+    background: $input_edit;
+    color: $input_color;
+    font-size: 14px;
+  }
+  .cke_dialog_contents{
+    border-top:none;
+  }
+  .cke_dialog_tabs{
+    .cke_dialog_tab{
+
+    }
+  }
+  .cke_dialog_footer{
+    background-image: none;
+    background:transparent;
+    outline: none;
+    -webkit-box-shadow:none;
+    box-shadow:none;
+  }
+  a.cke_dialog_ui_button_ok,
+  a.cke_dialog_ui_button{
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    background: $title;
+    background-image: none;
+    border:0;
+    &:hover{
+      background: $header;
+      background-image: none;
+      border:0;
+    }
+    span{
+      padding: 6px 12px !important;
+      text-shadow:none;
+      font-family: "proxima_nova_rgbold";
+      font-size: 14px !important;
+    }
+  }
+  a.cke_dialog_ui_button_ok:focus,
+  a.cke_dialog_ui_button_ok:active,
+  a.cke_dialog_ui_button_cancel:focus,
+  a.cke_dialog_ui_button_cancel:active{
+    padding: 6px 12px;
+  }
+  a.cke_dialog_ui_button:focus,
+  a.cke_dialog_ui_button:active{
+    padding: 6px 12px;
+    text-shadow:none;
+    background-image: none;
+    -webkit-box-shadow:none;
+    box-shadow:none;
+  }
+}
+.action_m{
+  .actions{
+    margin-top: 34px;
+  }
+}
+
+.action_p{
+  .actions{
+    padding-top: 34px!important;
+  }
+}
+
+.hide_sl #product_slider_text_input{
+  display: none;
+}
+#product_slider_input{
+  margin-bottom: 0;
+}
+#product_slider_text_input{
+  margin-top: 20px;
+}

@@ -1,0 +1,64 @@
+.wb{
+	&_cats,
+	&_cat{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top:0;
+		left: 0;
+		display: none;
+		z-index: 1;
+		&.active{
+			z-index: 5;
+			display: block;
+		}
+	}
+	&_cats{
+		opacity: 0;
+	}
+}
+
+.navig_main{
+	background-color: #eee;
+	position: absolute;
+	z-index: 1;
+	display: none;
+	opacity: 0;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	&.active{
+		z-index: 20;
+		display: block;
+	}
+	a{
+		display:inline-block;
+		vertical-align: top;
+		position: relative;
+		span{
+			vertical-align: top;
+			position: relative;
+			color: #a7abbb;
+			font-size: 2.1rem;
+			text-transform: uppercase;
+			@include transition(color .24s);
+		}
+		&:hover span{
+			color: black;
+		}
+	}
+}
+
+.navig_btns{
+	top: 50%;
+}
+
+.navig_prev{
+	@include transform(translateY(-50%) rotate(-90deg))
+}
+
+.navig_next{
+	@include transform(translateY(-50%) rotate(90deg))
+}

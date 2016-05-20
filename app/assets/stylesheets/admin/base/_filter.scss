@@ -1,0 +1,122 @@
+#filters_sidebar_section > h3, .footer{
+  display: none;
+}
+.filter_form{
+  position: absolute;
+  top: 158px;
+  right: 37px;
+  background: white;
+  z-index: 800;
+  border: 1px solid $filter_border;
+  padding: 18px 17px;
+  border-radius: 7px;
+  z-index: 100;
+  display: none;
+  &:before{
+    display: block;
+    position: absolute;
+    content: "";
+    top: -26px;
+    right: 40px;
+    border: 13px solid transparent; 
+    border-bottom: 13px solid $filter_border;
+  }
+  &:after{
+    display: block;
+    position: absolute;
+    content: "";
+    top: -24px;
+    right: 41px;
+    border: 12px solid transparent; 
+    border-bottom: 12px solid white;
+  }
+  // display: none;
+  select,
+  input{
+    background-color: white;
+    border-radius: 5px;
+    height: 35px;
+    padding:0 14px;
+    border: 1px solid $filter_border;
+  }
+  label{
+    display: block;
+    font-size: 11px;
+    line-height: 11px;
+    font-weight:bold;
+    text-transform: uppercase;
+    color: $filter_activ_color;
+    margin-bottom: 10px;
+  }
+  .filter_form_field{
+    margin-bottom: 25px;
+  }
+  .filter_select, .filter_boolean{
+
+    select{
+      width: 100%;
+    }
+  }
+  .select_and_search{
+    select{
+      width: calc(41% - 28px);    
+    } 
+    input{
+      width: calc(53% - 28px);
+      float: right;
+      background: $table_back;
+      @include clear();
+    }      
+  }
+
+  .filter_date_range{
+    text-align: center;
+    @include clear();
+    label{
+      text-align: left;
+    }
+    input{
+      position: relative;
+      padding-right: 27px;
+      width: calc(43% - 41px)!important;
+      float: left;
+      display: inline-block;
+      // &:before{
+      //   $link: "admin/ico_cal.png";
+      //   display: inline-block;
+      //   content: "";
+      //   vertical-align: middle;
+      //   width: image-width($link);
+      //   height: image-height($link);
+      //   background: asset-data-url($link);             
+      // }
+      &:last-child{
+        float: right;
+      }      
+    }
+    span{
+      position: relative;
+      top: 5px;
+      height: 1px;
+      width: 16px;
+      overflow: hidden;
+      color: $filter_border;
+      background: $filter_border;
+      display: inline-block;
+    }
+  }
+
+  .buttons{
+    @include clear();
+    width: 100%;
+    a{
+      display: inline-block;
+      float: left;      
+      @include b_cancel();
+    }
+    input[type="submit"]{
+      float: right;
+      @include button();
+    }
+  }
+}

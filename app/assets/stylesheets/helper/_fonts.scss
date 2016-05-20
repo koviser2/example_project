@@ -1,0 +1,16 @@
+@mixin f($name, $adress){
+  @font-face {
+    font-family: $name;
+    src: asset-url("fonts/#{$adress}.eot");
+    src: asset-url("fonts/#{$adress}.eot") format('embedded-opentype'),
+         asset-url("fonts/#{$adress}.woff2") format('woff2'),
+         asset-url("fonts/#{$adress}.woff") format('woff'),
+         asset-url("fonts/#{$adress}.ttf") format('truetype'),
+         asset-url("fonts/#{$adress}.svg#{$name}") format('svg');
+  }
+}
+
+// @include f(HelveticaNeueLTStd-BdCn, HelveticaNeueLTStdBdCn);
+@include f(HelveticaNeueLTStd-BdCn, HelveticaNeueCondensedBold);
+@include f(Bebas_Neue_Cyrillic2, bebas_neue_cyrillic_2-webfont);
+@include f(Bebas, bebas___-webfont);

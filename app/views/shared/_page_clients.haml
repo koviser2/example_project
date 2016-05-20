@@ -1,0 +1,34 @@
+.cl_content
+	.bg
+	.girl
+	%h1{:class => 'top'} 
+		TOP 
+		%span 
+			C
+			%a 
+				LIE
+			NTS
+	.gradient
+	.logos
+		.wrapper{:style => "width: #{client_logos.length * 29 * 2}rem;"}
+			- client_logos.each do |logo|
+				.client
+					%figure{:style => "background-image: url(#{logo.picture.url})"}
+			- client_logos.each do |logo|
+				.client
+					%figure{:style => "background-image: url(#{logo.picture.url})"}
+
+	.bottom.mb_des
+		.left.side
+		.center
+			%h1= client_main.footer.html_safe
+		.right.side
+
+	.mob_info_btn.mob_clients_info_btn.mb_ad info
+	.mob_info.mob_clients_info.mb_ad
+		.about_footer
+			.bottom
+				.center
+					%h1= client_main.footer.html_safe
+				.left.side
+				.right.side

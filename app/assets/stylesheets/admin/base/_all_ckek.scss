@@ -1,0 +1,134 @@
+.table_tools{
+  display: none;
+}
+.my_resource_selection_toggle_cell{
+  label{
+    top: 0;
+    z-index: 7;
+    @include transition($header_time);
+  }
+}
+@mixin flash_style(){
+  position: fixed;
+  z-index: 300;
+  background: white;
+  border-radius: 5px;
+  border: 1px solid $flash_border;
+  padding: 27px 27px 27px 84px;
+  color: $filter_activ_color;
+  @include box-shadow(0 0 15px rgba(0,0,0,0.25));  
+  &:before{
+    content: "";    
+    position: absolute;
+    top: 50%;
+    margin-top: -21px;
+    left: 20px;
+  }  
+}
+.flashes {
+  .flash_notice{
+    @include flash_style();
+    left: 155px;  
+    bottom: 34px;
+    display: none;
+    &:before{
+      @include s("rander");
+    }
+  }
+  .flash_notice_2{
+    @include flash_style();
+    top: 16px;
+    left: 127px;
+    &:before{
+      @include s("checking2");
+    }
+  }
+}
+.index_as_table{
+  position: relative;
+  top: -24px;
+  z-index: 1;
+}
+.delete_many{
+  .disabled{
+    padding-top: 0!important;
+    padding-bottom: 0!important;
+    max-height: 0!important;
+  }
+  .disabled.delete_many_div_first{
+    &:after{
+      opacity: 0;
+    }
+  }
+  .disabled.delete_many_div_second{
+    overflow: hidden;
+  }
+  .table_tools{
+   display: block;
+  }
+  .delete_many_div_first{
+    &:before{
+      position: absolute;
+      content: "";
+      display: block;
+      height: 100%;
+      width: 36px;
+      background: $input_edit;
+      top: 0;
+      left: -36px;
+    }
+    &:after{
+      display: inline-block;
+      content: "d";
+      font-size: 14px;
+      line-height: 36px;
+      color: $input_edit;
+    }
+  }
+  .delete_many_div_second{    
+    &:after{
+      position: absolute;
+      content: "";
+      display: block;
+      height: 100%;
+      width: 36px;
+      background: $input_edit;
+      top: 0;
+      right: -36px;
+    }
+  }
+  .delete_many_div{
+    // overflow: hidden;
+    @include transition($header_time);
+    max-height: 100px;
+    padding: 11px 14px;
+    position: relative;
+    background: $input_edit;
+    height: 100%;
+    margin-top: -20px;
+    div{
+      display: inline-block;
+    }
+  }
+  a{
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 36px;
+    display: inline-block;
+  }
+  .dropdown_menu_button{
+    color: $header;
+    font-weight: bold;
+  }
+
+  li{
+    display: inline-block;
+    .batch_action{
+      display: inline-block;
+      color: white;
+      background: $table_red;
+      border-radius: 5px;
+      padding: 0 12px;
+    }
+  }  
+}

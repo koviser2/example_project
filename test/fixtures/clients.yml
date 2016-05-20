@@ -1,0 +1,9 @@
+one:
+  client_dashboard: one
+
+two:
+  client_dashboard: one
+  show: false
+  
+three:
+  client_dashboard: one

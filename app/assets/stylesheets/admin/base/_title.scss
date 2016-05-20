@@ -1,0 +1,154 @@
+.title_bar{
+  position: relative;
+  $h: 73px;
+  z-index: 10;
+  background: $title;
+  height: $h;
+  a{
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 7px;
+    @include transition($header_time);
+  }
+ .titlebar_left_element{
+  position: relative;
+    float: left;
+    div{
+      display: inline-block;
+    }
+    .index_element{      
+      vertical-align: top;
+      a{
+        padding: 0 70px 0 34px;
+        color: white;
+        font-family: "proxima_nova_ltsemibold";
+        @include transition($header_time);
+        border-radius: 0;
+        height: 100%;
+        line-height: $h;
+        height: $h;
+        display: inline-block;
+        &:before{
+          @include s("back");
+          content: "";
+          margin-right: 23px;
+        }
+        &:hover{
+          background: $title_logout;
+        }
+      }
+    }
+    .new_element{     
+      color: $title;
+      margin-top: ($h - 39px)/2;
+      margin-left: 34px;
+      a{
+        padding: 0 27px;
+        background: white;
+        display: inline-block;
+        color: $title;
+        line-height: 39px;
+        text-align: center;
+        &:hover{
+        .plus_element{
+          width: 11px;
+          overflow: inherit;
+          // height: auto;
+          opacity: 1;
+         }
+         span{
+          padding-right: 0;
+         }
+        }
+        .plus_element{
+          @include transition(all $header_time);
+          width: 0px;
+          opacity: 0;
+          margin-right: 13px;
+        }
+        span{
+          @include transition(all $header_time);
+          padding-right: 11px;
+        }
+      }
+    }
+    .level1{
+      margin-left: 21px;
+    }
+    #titlebar_link{
+      margin-top: ($h - 39px)/2;
+      a{
+        display: inline-block;
+        margin-left: 13px;
+        color: white;
+        line-height: 35px;
+        border: 2px solid $title_border;
+        padding: 0 30px;
+        &:hover{
+          border-color: white;
+        }
+      }
+    }
+ }
+ .level2{
+    width: 100%;
+    #titlebar_link{
+      float: right;
+      @include clear();
+      margin-right: 19px;
+    }
+ }
+ .titlebar_right_element{
+    float: right;
+    ul{
+      position: relative;
+      display: inline-block;
+      height: $h;
+      li{
+        display: inline-block;
+      }
+      #current_user{
+        span, a{
+          display: inline-block;
+          color: white;
+          line-height: 39px;
+          margin-top: ($h - 39px)/2;
+        }
+      }
+      #logout{
+        position: relative;
+        display:inline-block;
+        height: $h;
+        width: 71px;
+        margin-left: 22px;
+        vertical-align: top;
+        a{   
+          display:inline-block;
+          color: $title;
+          font-size: 1px;
+          height: 100%;
+          width: 100%;
+          vertical-align: top;
+          border-radius: 0;
+          @include transition($header_time);
+          &:hover{
+            background-color: $title_logout; 
+          }
+          &:before{
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            content: "";
+            width: 90%;
+            padding-left: 10%;
+            height: 100%;
+            $link: "admin/logout.png";
+            background: asset-data-url($link) no-repeat;
+            background-position: center; 
+          }
+        }
+      }
+    }
+ }
+}

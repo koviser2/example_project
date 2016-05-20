@@ -1,0 +1,14 @@
+.mg_content
+	.pages
+		.page.page_home{class: active?("")}
+			= render partial: "shared/page_home"
+		.page.page_work{class: active?(:work)}
+			= render partial: "shared/page_work"
+		.page.page_about{class: active?(:about)}
+			= render partial: "shared/page_about"
+		.page.page_casting{class: active?(:casting)}
+			= render partial: "shared/page_casting"
+		.page.page_locations{class: active?(:locations)}
+			= render partial: "shared/page_locations"
+		.page.page_clients{class: active?(:clients)}
+			= render partial: "shared/page_clients"

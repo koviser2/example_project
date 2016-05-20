@@ -1,0 +1,24 @@
+%svg.loc_svg{:xmlns => "http://www.w3.org/2000/svg", "xmlns:xlink" => "http://www.w3.org/1999/xlink", width: "100%", height: "100%", preserveAspectRatio: "xMidYMid", viewBox: "0 0 2700 1340"}
+	%image{x:0, y:0, width: "2700", height: "1340", "xlink:href" => image_url('loc_bridge.jpg')}
+	%image.loc_text3{x:85, y:772, width: "2530", :height => "568", "xlink:href" => image_url('loc_bridge_broken.png'), opacity: "0"}
+	%image.loc_text4.loc_stone1{transform: "matrix(0.2, 0, 0, 0.2, 1100, 900)", x:223, y:828, width: "2253", height: "632", "xlink:href" => image_url('loc_stones1.png'), opacity: "0"}
+	%image.loc_text4.loc_stone2{transform: "matrix(0.2, 0, 0, 0.2, 1100, 900)", x:223, y:828, width: "2253", height: "632", "xlink:href" => image_url('loc_stones2.png'), opacity: "0"}
+	%image.loc_text4.loc_stone3{transform: "matrix(0.2, 0, 0, 0.2, 1100, 900)", x:223, y:828, width: "2253", height: "632", "xlink:href" => image_url('loc_stones3.png'), opacity: "0"}
+	%image.loc_text2{ transform: "matrix(1, 0, 0, 1, 0, -100)", opacity:"0", x: "382", y: "730", width: "1935", height: "256", "xlink:href" => image_url('loc_final_shadow.png')}
+	%image.loc_text{ transform: "matrix(1, 0, 0, 1, 0, -1200)", x: "382", y: "720", width: "1935", height: "256", "xlink:href" => image_url('loc_final.png')}
+	%image.loc_text5{ transform: "matrix(1, 0, 0, 1, 0, 0)", opacity: '0', x: "382", y: "720", width: "1898", height: "444", "xlink:href" => image_url('smoke.png')}
+.loc_footer.mb_des= location_main.describe
+.loc_nav
+	- locations.each_with_index do |location, index|
+		.loc_nav_item
+			=link_to "#", class: "loc_nav_size#{index%10+1}", data: {id: location.id, url: show_location_path(locale, location)} do
+				%span= location.name
+
+.mob_info_btn.mib_w.mob_location_info_btn.mb_ad info
+.mob_info.mob_location_info.mb_ad
+	.about_footer
+		.text= location_main.describe
+
+.loc_cats
+	.loc_cat
+		.work_block

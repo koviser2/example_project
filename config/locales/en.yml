@@ -1,0 +1,29 @@
+en:
+  lng:
+    ua: 'UA'
+    en: 'EN'
+  active_admin:
+    globalize:
+      translations: "Translate"
+      language:
+        uk: "Украинский"
+        en: "Английский"
+  layout:
+    close: "CLOSE"
+    prev: "PREV"
+    next: "NEXT"
+    scroll_down: "Scroll down"
+    back:
+      work: "BACK TO WORK"
+      locations: "BACK TO LOCATIONS"
+      about: "BACK TO ABOUT"
+      casting: "BACK TO CASTING"
+  header:
+    work: "WORK"
+    about: "ABOUT"
+    casting: "CASTING"
+    locations: "LOCATIONS"
+    clients: "CLIENTS"
+    mail: "Mail"
+    facebook: "Facebook"
+    vimeo: "Vimeo"

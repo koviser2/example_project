@@ -1,0 +1,29 @@
+one:
+  client: one
+  locale: "ua"
+  name: "name one ua"
+
+two:
+  client: one
+  locale: "en"
+  name: "name one en"
+
+one:
+  client: two
+  locale: "ua"
+  name: "name two ua"
+
+three:
+  client: two
+  locale: "en"
+  name: "name two en"
+
+four:
+  client: three
+  locale: "ua"
+  name: "name three ua"
+
+five:
+  client: three
+  locale: "en"
+  name: "name three en"

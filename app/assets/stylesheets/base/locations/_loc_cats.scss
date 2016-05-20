@@ -1,0 +1,29 @@
+.loc{
+	&_cats,
+	&_cat{
+		width: 100%;
+		height: 100%;
+	}
+	&_cats{
+		position: relative;
+		z-index: 34;
+		display: none;
+		&.active{
+			display:block;
+		}
+	}
+	&_cat{
+		position: absolute;
+		z-index: 1;
+		display: none;
+		&.active{
+			display:block;
+		}
+		.wb_blk_box{
+			width: 100%;
+		}
+		.wb_col .pic{
+			animation: none !important;
+		}
+	}
+}

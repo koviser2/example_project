@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: pronto_development
+
+test:
+  <<: *default
+  database: pronto_test
+
+production:
+  <<: *default
+  database: pronto_production
+

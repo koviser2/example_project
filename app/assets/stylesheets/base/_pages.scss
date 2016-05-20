@@ -1,0 +1,178 @@
+a{
+	text-decoration: none;
+}
+
+.table{
+	display:table;
+}
+.tr{
+	display: table-row;
+}
+.td{
+	display: table-cell;
+}
+
+.clearfix:after{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+html{
+	font-size: 0.520839vw; /* 1rem = 10px (1920 x 1080) */
+}
+
+html, body{
+	width: 100vw;
+	height: 100vh;
+}
+
+body{
+	margin: 0;
+	background-color: black;
+	font-family: "HelveticaNeueLTStd-BdCn", sans-serif;
+}
+
+// adapt
+.adapt{
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index: 99;
+	.block{
+		position: absolute;
+		top: 50%;
+		left: 0;
+		width: 100%;
+		text-align: center;
+		@include transform(translateY(-50%));
+		img{
+			vertical-align: top;
+		}
+		.text{
+			padding-top: 48px;
+			font-family: "Bebas";
+			color: white;
+			font-size: 20px;
+			line-height: 26px;
+		}
+	}
+}
+
+
+// Main Grid
+.main_grid{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.mg_top,
+.mg_left,
+.mg_right,
+.mg_bottom{
+	position: absolute;
+	z-index: 20;
+}
+
+.mg_border{
+	background-color: #eee;
+}
+
+.mg_top,
+.mg_left,
+.mg_right{
+	top: 0;
+}
+
+.mg_bottom{
+	bottom: 0;
+	line-height: $mg_line_height;
+}
+
+.mg_top,
+.mg_bottom{
+	width: 100%;
+	height: $mg_border_size;
+}
+
+.mg_left,
+.mg_right{
+	width: $mg_border_size;
+	height: 100%;
+	line-height: $mg_line_height;
+}
+
+.mg_top,
+.mg_left,
+.mg_bottom{
+	left: 0;
+}
+
+.mg_right{
+	right: 0;
+}
+
+.mg_top{
+	line-height: $mg_line_height;
+	text-align: center;
+}
+
+.mg_content{
+	position: absolute;
+	z-index: 15;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	@include box-sizing(border-box);
+}
+
+// bottom_border
+.scroll_down{
+	text-align: center;
+	opacity: 0;
+	@include transition(opacity 1.8s);
+	.title{
+		vertical-align: top;
+		position: relative;
+		color: #a7abbb;
+		font-size: 2.1rem;
+		text-transform: uppercase;
+	}
+	&.active{
+		@include transition(opacity 1.8s 5s);
+		opacity: 1;
+	}
+}
+
+// pages
+.pages{
+	position: relative;
+	overflow: hidden;
+	opacity: 0;
+}
+
+.page{
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding: $mg_border_size;
+	display: none;
+	color: white;
+	background-color: black;
+	@include box-sizing(border-box);
+	&.active{
+		display: block;
+	}
+}
+
+.pages,
+.page{
+	width: 100%;
+	height: 100%;
+}

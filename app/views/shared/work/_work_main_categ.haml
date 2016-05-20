@@ -1,0 +1,47 @@
+.wb_title
+	.wb_title_text1 WORK
+	.wb_title_text2 FROM
+	.wb_title_text3 WALL STREET
+.work_block
+	.wb_main_col
+		.wb_col.wb_col_big.wb_col_tl.wb_col_h3{data:{id: main_skins[0].id}}
+			.border
+				.center_line
+			= render partial: "shared/work/work_content", locals: {btn_left: false, skin: main_skins[0], url: work_path(video: main_skins[0].id)}
+			.wb_blk
+				.wb_blk_box.wb_blk_box_bl
+				.wb_blk_box.wb_blk_box_tr.wb_full_h
+				.wb_blk_line.wb_blk_line_tr
+			.pic_block
+				= render partial: "shared/noise"
+				.pic{style: "background-image: url(#{image_url main_skins[0].try(:picture)})"}
+	.wb_main_col.z_bigger
+		.wb_col.wb_col_small.wb_col_tl.wb_col_h5{data:{id: main_skins[1].id}}
+			.border
+			= render partial: "shared/work/work_content", locals: {btn_left: false, skin: main_skins[1], url: work_path(video: main_skins[1].id)}
+			.wb_blk
+				.wb_blk_box.wb_blk_box_tl.wb_full_h
+			.pic_block
+				= render partial: "shared/noise"
+				.pic{style: "background-image: url(#{image_url main_skins[1].try(:picture)})"}
+		.wb_col.wb_col_big.wb_col_br.wb_col_rh.wb_col_h3{data:{id: main_skins[2].id}}
+			.border
+				.center_line
+			= render partial: "shared/work/work_content", locals: {btn_left: true, skin: main_skins[2], url: work_path(video: main_skins[2].id)}
+			.wb_blk
+				.wb_blk_box.wb_blk_box_br
+				.wb_blk_box.wb_blk_box_tl.wb_full_h
+			.pic_block
+				= render partial: "shared/noise"
+				.pic{style: "background-image: url(#{image_url main_skins[2].try(:picture)})"}
+	.wb_main_col
+		.wb_col.wb_col_big.wb_col_tl.wb_col_h4{data:{id: main_skins[3].id}}
+			.border
+				.center_line
+			= render partial: "shared/work/work_content", locals: {btn_left: false, skin: main_skins[3], url: work_path(video: main_skins[3].id)}
+			.wb_blk
+				.wb_blk_box.wb_blk_box_bl.wb_full_h.slide
+				.wb_blk_box.wb_blk_box_tr.wb_full_h.slide
+			.pic_block
+				= render partial: "shared/noise"
+				.pic{style: "background-image: url(#{image_url main_skins[3].try(:picture)})"}

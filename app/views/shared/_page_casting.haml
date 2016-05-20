@@ -1,0 +1,33 @@
+.casting_wrap
+	%svg.casting_svg{:xmlns => "http://www.w3.org/2000/svg", "xmlns:xlink" => "http://www.w3.org/1999/xlink", width: "100%", height: "100%", preserveAspectRatio: "xMidYMax", viewBox: "0 0 1920 1080"}
+		%defs
+			/ %pattern#cast_grad{x:0, y:0, width: "4", height: "500",patternUnits: "userSpaceOnUse"}
+			/ 	%image{x:0, y:0, width: "4", height: "500", "xlink:href" => image_url('casting/gradient.png')}
+			%lineargradient#cast_grad{x1: "0%", x2: "0%", y1: "0%", y2: "100%"}
+				%stop{offset: "0%", style: "stop-color:rgb(7,3,26);stop-opacity:0"}
+				%stop{offset: "12%", style: "stop-color:rgb(7,3,26);stop-opacity:0.1"}
+				%stop{offset: "50%", style: "stop-color:rgb(7,3,26);stop-opacity:1"}
+		%image.cast_man{transform:"matrix(1, 0, 0, 1, 0, 1071)", x:473, y:9, width: "663", height: "1071", "xlink:href" => image_url('casting/man.png')}
+		%image.cast_woman{transform:"matrix(1, 0, 0, 1, 0, 892)", x:277, y:188, width: "591", height: "892", "xlink:href" => image_url('casting/woman.png')}
+		%image.cast_boy{transform:"matrix(1, 0, 0, 1, 0, 945)", x:955, y:135, width: "716", height: "945", "xlink:href" => image_url('casting/boy.png')}
+		%image.cast_girl{transform:"matrix(1, 0, 0, 1, 0, 770)", x:797, y:310, width: "601", height: "770", "xlink:href" => image_url('casting/girl.png')}
+		%rect.svg_grad{transform:"matrix(1, 0, 0, 1, 0, 0)", x:"-50%", y:580, width: "200%", height: "500", fill:"url(#cast_grad)"}
+		%g.cast_title.cast_title_l{transform:"matrix(1, 0, 0, 1, 2603, 587)"}
+			%path{fill:"#00aeef", d: "M11 31 L686 0 L773 147 L702 277 L0 272 z"}
+			%image.t_star{x:60, y:55, width: "616", height: "181", "xlink:href" => image_url('casting/t_waggon.png')}
+		%g.cast_title.cast_title_r{transform:"matrix(1, 0, 0, 1, -1455, 591)"}
+			%path{fill:"#f17c45", d: "M0 0 L491 45 L472 256 L47 282 z"}
+			%image.t_star{x:60, y:55, width: "366", height: "181", "xlink:href" => image_url('casting/t_star.png')}
+		%image.cast_girl.cast_girl_fingers{opacity:0, transform:"matrix(1, 0, 0, 1, 0, 770)", x:797, y:310, width: "601", height: "770", "xlink:href" => image_url('casting/girl_fingers.png')}
+		%text.cast_text.cast_cat_man{transform:"matrix(1, 0, 0, 1, 0, -800)", x: 440, y: 180, opacity: 0, data: {type: 0, url: casting_women_path}} WOMEN
+		%text.cast_text.cast_cat_woman{transform:"matrix(1, 0, 0, 1, 0, -800)", x: 980, y: 180, opacity: 0, data: {type: 1, url: casting_men_path}} MEN
+		%text.cast_text.cast_cat_kids{transform:"matrix(1, 0, 0, 1, 0, -800)", x: 1360, y: 180, opacity: 0, data: {type: 2, url: casting_kids_path}} KIDS
+
+	.cast_bot_text.mb_des= casting_main.describe
+	.mob_info_btn.mob_casting_info_btn.mb_ad info
+	.mob_info.mob_casting_info.mb_ad
+		.about_footer
+			.text= casting_main.describe
+	.cast_gal
+		- if @casting_pictures
+			= render partial: "shared/casting/casting", locals: {type: @casting_type, pictures: @casting_pictures}

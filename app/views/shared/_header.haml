@@ -1,0 +1,32 @@
+%header
+	%a.logo{:href => "#", data: {url: root_path}}
+	%nav.mb_des
+		%a.item{:href => "#", class: active?(:work), data: {url: work_path}}
+			%span.title= t "header.work"
+		%a.item{:href => "#", class: active?(:about), data: {url: about_path}}
+			%span.title= t "header.about"
+		%a.item{:href => "#", class: active?(:casting), data: {url: casting_path}}
+			%span.title= t "header.casting"
+		%a.item{:href => "#", class: active?(:locations), data: {url: locations_path}}
+			%span.title= t "header.locations"
+		%a.item{:href => "#", class: active?(:clients), data: {url: clients_path}}
+			%span.title= t "header.clients"
+	.burger.mb_ad
+	.mob_nav.mb_ad
+		%nav.mb_ad
+			%a.item{:href => "#", class: active?(:work), data: {url: work_path}}
+				%span.title= t "header.work"
+			%a.item{:href => "#", class: active?(:about), data: {url: about_path}}
+				%span.title= t "header.about"
+			%a.item{:href => "#", class: active?(:casting), data: {url: casting_path}}
+				%span.title= t "header.casting"
+			%a.item{:href => "#", class: active?(:locations), data: {url: locations_path}}
+				%span.title= t "header.locations"
+			%a.item{:href => "#", class: active?(:clients), data: {url: clients_path}}
+				%span.title= t "header.clients"
+	.add_info
+		= lang_switcher
+		.contacts
+			=link_to t("header.mail"), "#", target: "_blank"
+			=link_to t("header.facebook"), "#", target: "_blank"
+			=link_to t("header.vimeo"), "#", target: "_blank"

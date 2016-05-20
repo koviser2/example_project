@@ -1,0 +1,267 @@
+.paginated_collection{
+  table{
+    background: $table_back;
+    width: 100%;
+    padding: 0 36px;
+    border-collapse: separate;
+    border-spacing: 0 20px;
+    color:$header;
+    table-layout: auto;
+    thead{
+      background: $header_head;
+      th{
+        position: relative;
+        height: 45px;
+        padding: 0 14px;
+        vertical-align: middle;
+        text-align: center;
+        background: $header_head;
+        &:first-child{
+          width: 60px;
+          &:before{
+            position: absolute;
+            display: block;
+            width: 36px;
+            height: 100%;
+            left: -36px;
+            top: 0;
+            content: "";
+            background: $header_head;
+          }
+        }
+        &:last-child{   
+          width: 120px;
+          &:after{
+            position: absolute;
+            display: block;
+            width: 36px;
+            height: 100%;
+            right: -36px;
+            top: 0;
+            content: "";
+            background: $header_head;
+          }       
+        }
+        a{
+          text-decoration: none;
+          color: $header;
+          font-size: 14px;
+          position: relative;
+          @mixin triangle(){
+            position: absolute;
+            left: 100%;
+            top: 25%;
+            margin-left: 5px;
+            display: inline-block;
+            content: "";
+            border: 2px solid transparent; 
+          }
+          &:before{
+            @include triangle();
+            border-top: 2px solid $header;
+            margin-top: 5px;
+          }
+          &:after{
+            @include triangle();
+            border-bottom: 2px solid $header;
+          }
+        }
+        .show_filters{
+          color: $header;
+          font-size: 14px;
+          cursor: pointer;
+          display: inline-block;
+          padding: 7px 12px;
+          border-radius: 5px;
+          float: right;
+          z-index: 110;
+          &:before{
+            $link: "admin/ico_filter.png";
+            display: inline-block;
+            vertical-align: middle;
+            content: "";
+            margin-right: 11px;
+            width: image-width($link);
+            height: image-height($link);
+            background: asset-data-url($link);            
+          }
+        }
+        .active_filters{
+          background: $filter_activ;
+          color: $filter_activ_color;
+          &:before{
+            $link: "admin/ico_filter_hover.png";
+            width: image-width($link);
+            height: image-height($link);
+            background: asset-data-url($link);
+          }
+        }
+      }
+      th:nth-child(2){
+        text-align: left;
+      }
+      .sorted-desc a{
+        &:after{
+          display: none;
+        }
+        &:before{
+          margin-top: 3px;
+        }
+      }
+      .sorted-asc a{
+        &:before{
+          display: none;
+        }
+        &:after{
+          margin-top: 3px;
+        }
+      }
+    }
+    tbody{
+      tr{
+        padding: 20px 0;
+        // &:hover{
+        //   td{
+        //     -webkit-box-shadow: 0 4px 0 0 $border_bt;
+        //     box-shadow: 0 4px 0 0 $border_bt;
+        //   }
+        // }
+        td{
+          padding: 14px;
+          font-size: 14px;
+          line-height: 22px;
+          text-align: center;
+           background: white;
+           -webkit-box-shadow: 0 1px 0 0 $border_bt;
+           box-shadow: 0 1px 0 0 $border_bt;
+           height: 97px;
+           font-family: "proxima_nova_regular";
+           a{
+            display: block;
+            text-decoration: none;
+            color: $header;
+            &:hover{
+              opacity: 0.6;
+            }
+            div{
+              span.name{
+                text-transform: uppercase;
+                display: block;
+                margin-bottom: 9px;
+              }
+              span.information{
+                display: block;
+                color: $index_inform;
+              }
+            }
+           }
+        }
+        td:nth-child(2){
+          text-align: left;
+        }
+        td:first-child{
+          border-radius: 5px 0 0 5px;
+          width: 60px;
+        }
+        td:last-child{
+          border-radius: 0 5px 5px 0;
+          width: 120px;
+        }
+      }
+    }
+    .table_actions{
+      display: inline-block;
+    }
+    .yes,
+    .no{
+      display:inline-block;
+      width:52px;
+      height:27px;
+      line-height:28px;
+      text-align: center;
+      font-size:14px;
+      text-transform: uppercase;
+      color:#fff;
+      border-radius:5px;
+    }
+    .yes{
+      background-color: #63d97c;
+    }
+    .no{
+      background-color: #ee7474;
+    }
+    .edit_link{
+      display: none;
+    }
+    .delete_link{
+      display:inline-block;
+      width:42px;
+      height:42px;
+      border-radius: 2px;
+      background: asset-url("admin/trash.png") no-repeat center center;
+      text-indent: -9999px;
+      overflow: hidden;
+      vertical-align: middle;
+      &:hover{
+        background-color: $format_bg_h;
+        opacity:1;
+      }
+    }
+  }
+}
+
+.pagination,
+.pagination_information,
+.download_links
+{
+  margin-left:36px;
+}
+
+.pagination{
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  a{
+    color: $title;
+    text-decoration:none;
+    &:hover{
+      text-decoration:underline;
+    }
+  }
+}
+#index_footer{
+  @include clear(36px);
+  .pagination_information{
+    display: none;
+  }
+}
+#search_status_sidebar_section{
+  display: none;
+}
+
+.download_links{
+  position: relative;
+  float:left;
+  margin-left:36px;
+  padding:24px 26px;
+  border-radius: 6px;
+  background-color: white;
+  @include box-shadow(0 1px 0 0 $border_bt);
+  span,
+  a{
+    font-size:14px;
+    display:inline-block;
+    vertical-align: middle;
+    color: $header
+  }
+  a{
+    margin-left: 18px;
+    border-radius: 2px;
+    padding: 9px 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: $format_bg;
+    &:hover{
+      background-color: $format_bg_h;
+    }
+  }
+}

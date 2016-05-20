@@ -1,0 +1,64 @@
+@mixin clear($h: 0){
+  &:after{
+    display: block;
+    clear: both;
+    content: "";
+    height: $h;
+  }
+}
+
+@mixin s($h){
+  $link: "admin/#{$h}.png";
+  background: asset-data-url($link);
+  width: image-width($link);
+  height: image-height($link);
+  display: inline-block;
+}
+
+@mixin button(){
+  font-size:16px;
+  line-height: 16px;
+  font-weight:bold;
+  color:white;
+  border-radius:5px;
+  border: 0;
+  padding: 11px 1em;
+  background-color:$title;
+  cursor:pointer;
+  width: auto;
+  height: auto;
+  text-decoration: none;
+  @include transition(background $header_time);
+  &:hover{
+    background:$header
+  }
+}
+
+@mixin b_cancel(){
+  // margin-top:14px;
+  font-family: "proxima_nova_regular";
+  font-size:16px;
+  line-height: 38px;
+  color:#9a999d;
+  text-decoration: none;
+  a{color:#9a999d;
+    text-decoration: none;
+    display: inline-block;
+  }
+}
+
+@mixin f($name, $adress, $svg: false){
+  @font-face {
+      font-family: $name;
+      src: asset-url("admin/fonts/#{$adress}.eot");
+      src: asset-url("admin/fonts/#{$adress}.eot") format("embedded-opentype"),
+           asset-url("admin/fonts/#{$adress}.woff2") format("woff2"),
+           asset-url("admin/fonts/#{$adress}.woff") format("woff"),
+           asset-url("admin/fonts/#{$adress}.ttf") format("truetype");
+      @if $svg{
+        src:  asset-url("admin/fonts/#{$adress}.svg##{$name}") format("svg");
+      }
+      font-weight: normal;
+      font-style: normal;
+  }  
+}

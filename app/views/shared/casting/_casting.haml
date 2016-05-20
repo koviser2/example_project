@@ -1,0 +1,16 @@
+.titles
+	- case type
+		- when 0
+			.title.title_women.active{data: {url: casting_women_path}} WOMEN
+		- when 1
+			.title.title_men.active{data: {url: casting_men_path}} MEN
+		- when 2
+			.title.title_kids.active{data: {url: casting_kids_path}} KIDS
+- clear = [3,9]
+- size = 0
+- 18.times do |index|
+	.block
+		- if index.in? clear
+			- size +=1
+		- else
+			.inside{style: "background-image: url(#{pictures[index - size].try(:picture).try(:url)})"}

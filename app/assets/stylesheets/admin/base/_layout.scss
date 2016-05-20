@@ -1,0 +1,171 @@
+body, p, h1,h2,h3,h4,h5,h6,p,ul,li, ol{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+body{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+#wrapper{
+  position: relative;
+  min-height: 100%;
+  padding-left: $litle_header;
+  width: calc(100% - #{$litle_header});
+  @include transition(padding-left $header_time);
+  z-index: 2;
+}
+.open_wrapper{
+  padding-left: $big_header!important;
+}
+
+input.datepicker{
+  $link: "admin/ico_cal.png";
+  background: asset-data-url($link);
+  background-position: calc(100% - 9px) center;
+  background-repeat: no-repeat;
+}
+
+fieldset fieldset{
+  border: 0;
+  padding: 0;
+  margin: 0;      
+}
+@for $i from 1 through 10 {
+  $x: 100% / $i;
+  fieldset.line_#{$i}{
+    fieldset{
+        display: inline-block;
+        width: $x - 4%;
+        padding: 10px 1%;
+        margin: 10px 1%;
+        border: 0;
+        vertical-align: top;
+    }
+  }
+}
+@for $i from 1 through 20 {
+  $x: $i*5;
+  .w_#{$x}{
+    width: $x + 0%;
+  }
+}
+
+.has_many_container{
+  fieldset{
+    &:last-child{
+      &:after{
+
+      content: "";
+      display: block;
+      }
+    }
+  }
+}
+
+.has_many_add{
+  display: block;
+  text-decoration: none;
+  width: 1%;  
+  margin-top: 21px;
+  margin-bottom: 11px;
+  span{
+    white-space: nowrap;
+    position: relative;
+    @include button();
+    vertical-align: bottom;         
+  } 
+}
+
+
+.has_many_remove{
+ @include button();
+ position:relative;
+ display: inline-block;
+ bottom: 10px;
+ margin-bottom: 13px;
+}
+.actions {
+  width:100%;
+  ol {
+    li{
+      display:inline-block;
+      margin-bottom:0px!important;
+    }
+    .action input{
+      @include button();
+      padding: 12px 22px;
+    }
+    .cancel{
+      float:right;
+      @include b_cancel();
+    }
+  }
+}
+
+input[type="checkbox"]{
+    width:0;
+    height:0;
+    padding:0;
+    margin:0;
+    border:0;
+    display: none;
+    opacity: 0;
+  }
+  input[type="checkbox"] + label{    
+    position: relative;
+    padding-left: 29px;
+    line-height: 20px;
+    min-height: 22px;
+    display: inline-block !important;
+    cursor: pointer;
+    &:before{
+      content: '';
+      position: absolute;
+      cursor: pointer;
+      width:17px;
+      height:17px;
+      top:50%;
+      left:0;
+      border-radius:6px;
+      margin-top: -12px;
+      border:1px solid $checkbox_border;
+      background: white;
+    }
+  }
+  input[type="checkbox"]:checked + label{
+    &:before{
+      border-color: $title;
+      background: $title asset-data-url("admin/check.png") center no-repeat;
+    }
+  }
+.index_content {
+  th{
+    input[type="checkbox"] + label:before{
+      margin-top: -8px;
+    }
+  }  
+  td{
+    input[type="checkbox"] + label:before{
+      margin-top: -10px;
+    }
+  }
+}
+
+.ui-datepicker-div{
+  background: white;
+}
+
+.div_li{
+  max-height: 100px;
+  @include transition(all $header_time);
+  overflow: hidden;
+}
+.hide_li{
+  max-height: 0;
+  margin-bottom: 0!important;
+}

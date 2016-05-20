@@ -1,0 +1,75 @@
+.without_sidebar form fieldset.has_many_credentional, .without_sidebar form fieldset.has_many_style{
+  $h: 49px;
+  top: $h;
+  position: relative;
+  padding: 0 0 34px 0;
+  width: 100%;
+  margin-bottom: 72px;
+  &.has_many_credentional_top{
+    top: $h + 45px;
+  }
+  legend span{
+    position: relative;
+    z-index: 11;
+    margin-left: 34px;
+    top: 30px;
+  }
+  table{
+    position: absolute;
+    top: -$h;
+    left: 0;
+    z-index: 8;
+    th{
+      div{
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        padding: 0 34px 5px;
+        line-height: $h;
+        cursor: pointer;
+        font-size: 16px;
+        font-family: "proxima_nova_regular";
+        color: $filter_activ_color;
+        font-weight: normal;
+        @include transition(all $header_time);
+        &:hover{
+          background: $ui_tab_hover;
+        }
+        &:before{
+          @include s("ok_all");
+          content: "";
+          margin-right: 0;
+          max-width: 0;
+          overflow: hidden;
+          @include transition(all $header_time);
+        }
+      }
+      .active_locale{
+        background: white;
+        font-family: "proxima_nova_rgbold";
+        cursor: text;
+        &:hover{
+          background: white;
+        }
+      }
+      .all-element{
+        &:before{
+          margin-right: 7px;
+          max-width: image-width("admin/ok_all.png");
+        }
+      }
+    }
+  }
+  ol{
+    position: relative;
+    .has_many_container{
+      position: relative;
+      border-radius: 5px;
+      background: white;
+      padding: 68px 34px 0;
+      z-index: 10;
+      h3{
+        display: none;
+      }
+    }
+  }
+}

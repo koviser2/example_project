@@ -1,0 +1,278 @@
+// page_home
+.page_home{
+	padding: 0;
+	background: asset-url("bg.jpg") no-repeat center;
+	background-size: cover;
+}
+
+.citys,
+.city{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.city{
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.city_top{
+	background-position: left top;
+	background-image: asset-url("city_top.png");
+	@include transform(translate(-100%, -100%));
+}
+
+.city_bottom{
+	background-position: right bottom;
+	background-image: asset-url("city_bottom.png");
+	@include transform(translate(100%, 100%));
+}
+
+.home_perspective{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 10;
+	@include transform-style(preserve-3d);
+	@include transform(perspective(900px));
+}
+
+.inside_block{
+	position: absolute;
+	opacity: 0;
+	width: 126rem;
+	left: 50%;
+	top: 50%;
+	@include transform(translate(-50%,-49%));
+	@include transition(opacity 1.2s);
+	&.active{
+		@include transition(opacity 1.4s 3s);
+		opacity:1;
+	}
+}
+
+.logo_big{
+	width: 62.2rem;
+	height: 56.7rem;
+	margin: 0 auto 4.8rem;
+	background: asset-url("logo.svg") no-repeat center;
+	background-size: contain;
+}
+
+.bot_block{
+	text-align: center;
+	.bb{
+		width: 28rem;
+		height: 9rem;
+		line-height: 9rem;
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 2.3rem;
+		color: #eeeeee;
+		position: relative;
+		padding:0 3rem;
+		@include box-sizing(border-box);
+		&:before,
+		&:after{
+			content: "";
+			position: absolute;
+			top:50%;
+			margin-top: -4.5rem;
+			width: 7.6rem;
+			height: 9rem;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+		&:before{
+			left: 1rem;
+			background-image: asset-url("leaf_l.svg");
+		}
+		&:after{
+			right: 1rem;
+			background-image: asset-url("leaf_r.svg");
+		}
+		.text{
+			line-height: 2.4rem;
+			display: inline-block;
+			vertical-align: middle;
+			width: 100%;
+			font-family: "Bebas_Neue_Cyrillic2";
+			img{
+				max-width: 84%;
+				max-height: 9rem;
+				vertical-align: middle;
+			}
+			p{
+				margin:0;
+			}
+			.small{
+				font-size: 1.7rem;
+			}
+			.smallest{
+				font-size: 1.4rem;
+			}
+		}
+	}
+}
+
+.cloud{
+	position: absolute;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	// animation: none;
+}
+
+.cloud1{
+	width: 60.8rem;
+	height: 31.6rem;
+	top: 150rem;
+	left: -120rem;
+	background-image: asset-url("cloud1.png");
+	&.active{
+		@include animation(cloud1 40s infinite 14s);
+	}
+}
+
+.cloud2{
+	width: 52rem;
+	height: 30rem;
+	top: 150rem;
+	left: -80rem;
+	background-image: asset-url("cloud2.png");
+	&.active{
+		@include animation(cloud2 37s infinite 2s);
+	}
+}
+
+.cloud3{
+	width: 32rem;
+	height: 8rem;
+	top: 150rem;
+	left: -30rem;
+	background-image: asset-url("cloud3.png");
+	&.active{
+		@include animation(cloud3 36s infinite 5s);
+	}
+}
+
+.cloud4{
+	width: 33rem;
+	height: 16rem;
+	top: 150rem;
+	left: -50rem;
+	background-image: asset-url("cloud4.png");
+	&.active{
+		@include animation(cloud4 37s infinite 22s);
+	}
+}
+
+.cloud5{
+	width: 30rem;
+	height: 17rem;
+	top: 150rem;
+	left: -30rem;
+	background-image: asset-url("cloud5.png");
+	&.active{
+		@include animation(cloud5 39s infinite 7s);
+	}
+}
+
+.cloud6{
+	width: 60rem;
+	height: 20rem;
+	top: 150rem;
+	left: -50rem;
+	background-image: asset-url("cloud6.png");
+	&.active{
+		@include animation(cloud5 46s infinite 25s);
+	}
+}
+
+.cloud7{
+	width: 44rem;
+	height: 24rem;
+	top: 150rem;
+	left: -10rem;
+	background-image: asset-url("cloud7.png");
+	&.active{
+		@include animation(cloud7 39s infinite 9s);
+	}
+}
+
+.cloud8{
+	width: 44rem;
+	height: 24rem;
+	top: 150rem;
+	left: -50rem;
+	background-image: asset-url("cloud8.png");
+	&.active{
+		@include animation(cloud8 40s infinite 22s);
+	}
+}
+
+.cloud9{
+	width: 30rem;
+	height: 22rem;
+	top: 150rem;
+	left: 40rem;
+	background-image: asset-url("cloud9.png");
+	&.active{
+		@include animation(cloud9 46s infinite 17s);
+	}
+}
+
+.cloud10{
+	width: 24rem;
+	height: 15rem;
+	top: 150rem;
+	left: 20rem;
+	background-image: asset-url("cloud1.png");
+	&.active{
+		@include animation(cloud10 39s infinite 6.4s);
+	}
+}
+
+.cloud11{
+	width: 65rem;
+	height: 34rem;
+	top: 150rem;
+	left: 120rem;
+	background-image: asset-url("cloud1.png");
+	&.active{
+		@include animation(cloud11 38s infinite 6.2s);
+	}
+}
+
+@mixin clouds($name, $s_trlX: -40rem, $s_trlY: 0rem, $s_trlZ: -3000px, $f_trlX: 300rem, $f_trlY: 0rem, $f_trlZ: 2000px){
+	@include keyframes($name){
+		0%{
+			@include transform(rotateX(-8deg) rotateY(6deg) rotateZ(-38deg) translate3d($s_trlX, $s_trlY, $s_trlZ));
+			opacity:0;
+		}
+		20%{
+			opacity:1;
+		}
+		100%{
+			@include transform(rotateX(-8deg) rotateY(6deg) rotateZ(-38deg) translate3d($f_trlX, $f_trlY, $f_trlZ));
+		}
+	}
+}
+
+@include clouds(cloud1);
+@include clouds(cloud2);
+@include clouds(cloud3);
+@include clouds(cloud4);
+@include clouds(cloud5);
+@include clouds(cloud6);
+@include clouds(cloud7);
+@include clouds(cloud8);
+@include clouds(cloud9);
+@include clouds(cloud10);
+@include clouds(cloud11);

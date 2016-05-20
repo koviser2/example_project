@@ -1,0 +1,171 @@
+// mob_wb
+.mob_wb_categ_btn{
+	color: #eee9ed;
+	font-size: 12rem;
+	line-height: 10rem;
+	font-family: "Bebas_Neue_Cyrillic2";
+	text-transform: uppercase;
+	position: absolute;
+	bottom:2.4rem;
+	right:8rem;
+	z-index: 30;
+	cursor:pointer;
+}
+
+.mob_wb_categ{
+	display:none;
+	position: absolute;
+	z-index: 32;
+	width: 100%;
+	height: 100%;
+	top:0;
+	left: 0;
+	background-color: rgba(0, 0, 0, .9);
+	.wb_menu_block{
+		position: absolute;
+		top: 50%;
+		left:50%;
+		text-align: center;
+		@include transform(translate(-50%, -50%));
+		&.active{
+			top: 50%;
+			left:50%;
+		}
+		a{
+			background-color: transparent;
+			color: #a8acbc;
+			font-size: 10rem;
+		}
+	}
+}
+
+// work_block
+.wb_content{
+	overflow: hidden;
+	position: relative;
+}
+
+.unhover_block{
+	position: absolute;
+	z-index: 8;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: block;
+}
+
+.main_work_block{
+	position: absolute;
+	display: none;
+	top:0;
+	left:0;
+	z-index: 1;
+	&.active{
+		display: block;
+		z-index: 5;
+	}
+}
+
+.main_work_block,
+.work_block,
+.wb_content{
+	width: 100%;
+	height: 100%;
+}
+
+.work_block{
+	position: relative;
+	border-width: $wb_line/2 $wb_line/2 $wb_line/2 $wb_line/2;
+	border-style: solid;
+	border-color: $brd_color;
+	@include box-sizing(border-box);
+}
+
+.wb{
+	&_pop_up{
+		position: absolute;
+		top: $mg_border_size;
+		bottom: $mg_border_size;
+		left: $mg_border_size;
+		right: $mg_border_size;
+		z-index: 20;
+		display: none;
+		opacity: 0;
+		background: asset-url("video.jpg") no-repeat center center;
+		background-size: cover;
+		&.active{
+			display: block;
+		}
+		&_close{
+			background-color: #eee;
+			opacity:0;
+			z-index: 1;
+			width: calc(100% - #{$mg_border_size}*2);
+			font-size: 2.1rem;
+			position: absolute;
+			top: 0;
+			right: $mg_border_size;
+			line-height: $mg_line_height;
+			color: #a7abbb;
+			@include transition(opacity .4s);
+			text-align: right;
+			span{
+				position: relative;
+				vertical-align: top;
+				text-transform: uppercase;
+				cursor: pointer;
+				@include transition(color .24s);
+				&:hover{
+					color: black;
+				}
+			}
+			&.active{
+				opacity: 1;
+				z-index: 5;
+			}
+		}
+	}
+	&_title{
+		font-family: "Bebas_Neue_Cyrillic2";
+		position: absolute;
+		width: 49rem;
+		height: 40.6rem;
+		z-index: 50;
+		left: $mg_border_size;
+		bottom: 0;
+		&_text1,
+		&_text2,
+		&_text3{
+			position: absolute;
+		}
+		&_text1{
+			left: -0.4rem;
+			top: 0;
+			font-size: 26rem;
+			line-height: 26rem;
+			color: white;
+			letter-spacing: -0.7rem;
+			&:first-letter{
+				font-size: 30rem;
+			}
+		}
+		&_text2{
+			left: 2rem;
+			bottom: 8.2rem;
+			font-size: 9rem;
+			line-height: 9rem;
+			color: #9e0b0f;
+			letter-spacing: -0.2rem;
+		}
+		&_text3{
+			width: 62.5rem;
+			bottom: 0;
+			left: 18rem;
+			font-size: 15rem;
+			line-height: 15rem;
+			color: #9e0b0f;
+			letter-spacing: -0.3rem;
+		}
+	}
+}

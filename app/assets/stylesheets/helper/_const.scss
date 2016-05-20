@@ -1,0 +1,11 @@
+$mg_border_size: 6rem;
+$mg_mob_size: 10rem;
+$mg_line_height: 6rem;
+$wb_line: 1rem;
+$part_height: 16.666666667%; // 100/6
+$size6: 16.666666667%; // 100/6
+$size3: 33.333333333%; // 100/3
+$part_height_box: 14.8166666667rem; // 100/6
+$brd_color: black;
+$pos_line: $part_height_box - ($wb_line / 2);
+$pos_line2: ($part_height_box * 2) - ($wb_line / 2);

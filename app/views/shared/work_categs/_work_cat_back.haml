@@ -1,0 +1,54 @@
+.wb_main_col
+	.wb_col.wb_col_small.wb_col_tl.wb_col_h3{data:{id: skins[0].id}}
+		.border
+		= render partial: "shared/work/work_content", locals: {btn_left: false, skin: skins[0], url: video_link(skins[0])}
+		.wb_blk
+			.wb_blk_box.wb_blk_box_tl.wb_full_h
+		.pic_block
+			= render partial: "shared/noise"
+			.pic{style: "background-image: url(#{image_url skins[0].try(:picture)})"}
+	.wb_col.wb_col_small.wb_col_br.wb_col_h4{data:{id: skins[1].id}}
+		.border
+		= render partial: "shared/work/work_content", locals: {btn_left: false, skin: skins[1], url: video_link(skins[1])}
+		.wb_blk
+			.wb_blk_box.wb_blk_box_tl.wb_full_h
+			.wb_blk_line.wb_blk_line_bl
+		.pic_block
+			= render partial: "shared/noise"
+			.pic{style: "background-image: url(#{image_url skins[1].try(:picture)})"}
+.wb_main_col.z_bigger
+	.wb_col.wb_col_big.wb_col_tl.wb_col_h3{data:{id: skins[2].id}}
+		.border
+			.center_line
+		= render partial: "shared/work/work_content", locals: {btn_left: true, skin: skins[2], url: video_link(skins[2])}
+		.wb_blk
+			.wb_blk_box.wb_blk_box_br
+			.wb_blk_box.wb_blk_box_tl.wb_full_h
+		.pic_block
+			= render partial: "shared/noise"
+			.pic{style: "background-image: url(#{image_url skins[2].try(:picture)})"}
+	.wb_col.wb_col_small.wb_col_br.wb_col_h3{data:{id: skins[3].id}}
+		.border
+		= render partial: "shared/work/work_content", locals: {btn_left: false, skin: skins[3], url: video_link(skins[3])}
+		.wb_blk
+			.wb_blk_box.wb_blk_box_br.wb_full_h
+		.pic_block
+			= render partial: "shared/noise"
+			.pic{style: "background-image: url(#{image_url skins[3].try(:picture)})"}
+.wb_main_col
+	.wb_col.wb_col_small.wb_col_tl.wb_col_h3{data:{id: skins[4].id}}
+		.border
+		= render partial: "shared/work/work_content", locals: {btn_left: false, skin: skins[4], url: video_link(skins[4])}
+		.wb_blk
+			.wb_blk_box.wb_blk_box_tr.wb_full_h.slide
+		.pic_block
+			= render partial: "shared/noise"
+			.pic{style: "background-image: url(#{image_url skins[4].try(:picture)})"}
+	.wb_col.wb_col_small.wb_col_br.wb_col_h5{data:{id: skins[5].id}}
+		.border
+		= render partial: "shared/work/work_content", locals: {btn_left: false, skin: skins[5], url: video_link(skins[5])}
+		.wb_blk
+			.wb_blk_box.wb_blk_box_tr.wb_full_h.slide
+		.pic_block
+			= render partial: "shared/noise"
+			.pic{style: "background-image: url(#{image_url skins[5].try(:picture)})"}

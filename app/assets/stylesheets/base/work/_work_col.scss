@@ -1,0 +1,206 @@
+.wb{
+	&_main_col{
+		width: 33.33%;
+		height:100%;
+		position: relative;
+		float: left;
+		&.z_bigger{
+			z-index: 2;
+		}
+	}
+	&_col{
+		position: absolute;
+		z-index: 1;
+		@include box-sizing(border-box);
+		.border{
+			position: absolute;
+			z-index: 10;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			.center_line,
+			&:before,
+			&:after{
+				position: absolute;
+				z-index: 4;
+				top:-$wb_line/2;
+				width: $wb_line;
+				height: calc(100% + #{$wb_line});
+				background-color: $brd_color;
+				margin-left: -$wb_line/2;
+			}
+			.center_line{
+				left: 50%;
+			}
+			&:before,
+			&:after{
+				content: "";
+			}
+			&:before{
+				left:0;
+			}
+			&:after{
+				left:100%;
+			}
+		}
+		&:before,
+		&:after{
+			content: '';
+			position: absolute;
+			z-index: 20;
+			left: 0;
+			width: 100%;
+			height: $wb_line;
+			background-color: $brd_color;
+		}
+		&:before{
+			top:-$wb_line/2;
+		}
+		&:after{
+			bottom:-$wb_line/2;
+		}
+		&_tl{
+			left: 0;
+			top: 0;
+		}
+		&_tr{
+			right: 0;
+			top: 0;
+		}
+		&_tl1{
+			top: $part_height_box;
+			left: 0;
+		}
+		&_tr1{
+			top: $part_height_box;
+			right: 0;
+		}
+		&_tl2{
+			top: $part_height_box*2;
+			left: 0;
+		}
+		&_tr2{
+			top: $part_height_box*2;
+			right: 0;
+		}
+		&_bl1{
+			bottom: $part_height_box;
+			left: 0;
+		}
+		&_br1{
+			bottom: $part_height_box;
+			right: 0;
+		}
+		&_bl2{
+			bottom: $part_height_box*2;
+			left: 0;
+		}
+		&_br2{
+			bottom: $part_height_box*2;
+			right: 0;
+		}
+		&_bl{
+			left: 0;
+			bottom: 0;
+		}
+		&_br{
+			right: 0;
+			bottom: 0;
+		}
+		&_rh{
+			right: -50%;
+		}
+		&_lh{
+			left: -50%;
+		}
+		&_h1{
+			height: $part_height;
+		}
+		&_h2{
+			height: $part_height*2;
+		}
+		&_h3{
+			height: $part_height*3;
+		}
+		&_h4{
+			height: $part_height*4;
+		}
+		&_h5{
+			height: $part_height*5;
+		}
+		&_h6{
+			height: $part_height*6;
+		}
+		&_small{
+			width:50%;
+			.wb_blk_line,
+			.wb_blk_box{
+				width: 100%;
+			}
+		}
+		&_big{
+			width:100%;
+			.award_block{
+				width: 49% !important;
+			}
+		}
+		.pic_block{
+			overflow: hidden;
+		}
+		.pic_noise_block{
+				display:none;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 10;
+			.noise{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				opacity:0;
+			}
+			@for $i from 1 through 5 {
+				.noise#{$i}{
+					background-image: asset-url("noise#{$i}.png");
+					@include animation(noise#{$i} 10s infinite);
+				}
+			}
+		}
+		.pic_block,
+		.pic{
+			width:100%;
+			height:100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.pic{
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			&.anim_scale{
+				@include animation(photo_anim_scale 13s infinite alternate ease-in-out);
+			}
+			&.anim_unscale{
+				@include animation(photo_anim_unscale 9s infinite alternate ease-in-out);
+			}
+			&.anim_right{
+				@include animation(photo_anim_right 6s infinite alternate ease-in-out);
+			}
+			&.anim_left{
+				@include animation(photo_anim_left 7s infinite alternate ease-in-out);
+			}
+			&.anim_top{
+				@include animation(photo_anim_top 8s infinite alternate ease-in-out);
+			}
+			&.anim_bottom{
+				@include animation(photo_anim_bottom 7s infinite alternate ease-in-out);
+			}
+		}
+	}
+}

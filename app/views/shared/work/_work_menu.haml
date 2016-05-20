@@ -1,0 +1,5 @@
+.wb_menu_block.mb_des
+  - categories.each do |category|
+    .wb_menu_item{class: (@show_work_id == category.id) ? "active" : ""}
+      =link_to '#', data: {id: category.id, url:  show_work_path(locale, category.id)} do
+        %span= category.name

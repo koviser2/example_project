@@ -1,0 +1,37 @@
+locpic1:
+  location: one
+
+locpic2:
+  location: two
+
+locpic3:
+  location: four
+
+locpic4:
+  location: two
+
+locpic5:
+  location: three
+  show: false
+
+locpic6:
+  location: four
+
+locpic7:
+  location: one
+
+locpic8:
+  location: two
+
+locpic9:
+  location: three
+  show: false
+
+locpic10:
+  location: one
+
+locpic11:
+  location: two
+
+locpic12:
+  location: four

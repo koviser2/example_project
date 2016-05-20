@@ -1,0 +1,415 @@
+.page_about{
+	background: asset-url('about/bg_about.jpg') no-repeat center;
+	background-size: cover;
+}
+
+.mg_content{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+}
+
+.mob_about_info,
+.mob_info{
+	display: none;
+	position: absolute;
+	z-index: 35;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .9);
+	.about_footer{
+		display: block !important;
+		height:auto;
+		bottom: auto;
+		top: 50%;
+		left: 3%;
+		width: 94%;
+		@include transform(translateY(-50%));
+		.text{
+			font-size: 4.4rem;
+			line-height: 4.4rem;
+			width: 76%;
+			margin-left: 12%;
+		}
+		.about_r_block{
+			margin-right: 0;
+			margin-top: 0;
+			width: 100%;
+			height: 24rem;
+			font-size: 4.4rem;
+			line-height: 4.4rem;
+			.td:first-child{
+				width: auto;
+			}
+			.r{
+				max-height: 20rem;
+			}
+			.r_text{
+				padding-bottom: 5rem;
+			}
+			.r_bottom{
+				bottom:-1px;
+				height: 6rem;
+				line-height: 6rem;
+			}
+		}
+	}
+}
+
+.mob_about_info_btn,
+.mob_info_btn{
+	position: absolute;
+	z-index: 32;
+	font-size: 6rem;
+	bottom: 3rem;
+	right:4rem;
+	cursor: pointer;
+	text-transform: uppercase;
+	color: white;
+}
+
+.mib_w{
+	bottom: 3rem + $mg_mob_size;
+	right:4rem + $mg_mob_size;
+}
+
+.ppls_grad{
+	width: 100%;
+	height: 54%;
+	position: absolute;
+	z-index: 12;
+	bottom:0;
+	left: 0;
+	@include background-image(linear-gradient(transparent, transparent 8%, black 54%));
+	@include transition(all 1s);
+	&.active{
+		@include transform(translate(0, 24%));
+	}
+}
+
+.ppls_main{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.ppls_wrap{
+	position: absolute;
+	top:0;
+	left:50%;
+	height:100%;
+	width: 100%;
+	@include transform(translateX(-50%));
+}
+
+.ppls_slider{
+	z-index: 5;
+}
+
+.title_about{
+	position: absolute;
+	z-index: 3;
+	left: 50%;
+	top: -20rem;
+	max-width: 129rem;
+	max-height: 18.8rem;
+	@include transform(translate(-50%, 0));
+	@include transition(top 1s);
+	&.active{
+		top: 5rem;
+	}
+}
+
+.ppls_names{
+	top:auto;
+	bottom:0;
+	z-index: 14;
+	.ppl{
+		&:hover,
+		&.active{
+			cursor:pointer;
+			.ppl_name{
+				color: white;
+			}
+			.srname{
+				color: white;
+			}
+		}
+	}
+}
+
+.ppl{
+	position: relative;
+	width: 240px;
+	height:100%;
+	float:left;
+	z-index: 5;
+	&:nth-child(even){
+		z-index: 4;
+		.ppl_name{
+			bottom: 23rem;
+		}
+	}
+	&.front{
+		z-index: 6;
+	}
+	&_block{
+		width: 100%;
+		height:100%;
+		position: relative;
+	}
+	&_img{
+		width: 198%;
+		position: absolute;
+		bottom:0;
+		left: 50%;
+		@include transform(translate(-50%,0));
+	}
+	&_name{
+		cursor:pointer;
+		position: absolute;
+		z-index: 10;
+		left:50%;
+		bottom: 18rem;
+		text-align: center;
+		color: #a7abbb;
+		font-size: 1.8rem;
+		line-height: 1.4rem;
+		text-transform: uppercase;
+		font-family: "Bebas_Neue_Cyrillic2";
+		@include transition(color .24s);
+		@include transform(translate(-50%, 0));
+		.srname{
+			color: #b90005;
+			font-size: 3rem;
+			line-height: 2.6rem;
+			@include transition(color .24s);
+		}
+	}
+}
+
+.about_footer{
+	display:none;
+	position: absolute;
+	height: 12rem;
+	bottom: 3.4rem;
+	left: 0;
+	width: 100%;
+	z-index: 30;
+	@include transition(bottom 1s);
+	&.hide{
+		bottom: -14rem;
+	}
+	.text{
+		text-align: center;
+		margin-left: 1rem;
+		float: left;
+		font-size: 2.4rem;
+		line-height: 2rem;
+		color: #a8acbc;
+		width: 66.66%;
+		font-family: "Bebas_Neue_Cyrillic2";
+		span{
+			font-size: 1.4rem;
+			line-height: 1.4rem;
+		}
+	}
+}
+
+.about_r_block{
+	float: right;
+	margin-right: 2rem;
+	margin-top: 1.4rem;
+	width: 56rem;
+	height: 11rem;
+	border: 3px solid #a8acbc;
+	@include box-sizing(border-box);
+	font-size: 1.8rem;
+	text-transform: uppercase;
+	line-height: 1.8rem;
+	.td{
+		vertical-align: middle;
+		text-align: center;
+		position: relative;
+		&:first-child{
+			border-right: 3px solid #a8acbc;
+			width: 11rem;
+		}
+	}
+	.r{
+		max-width: 100%;
+		vertical-align: top;
+		max-height: 100%;
+	}
+	.r_text{
+		padding: 1px 0 4.4rem 0;
+		color: #a7abbb;
+		text-align: center;
+		p{
+			margin:0;
+		}
+	}
+	.r_bottom{
+		position: absolute;
+		width: 100%;
+		height: 3.4rem;
+		line-height: 3.4rem;
+		bottom: 0;
+		left: 0;
+		background-color: #a7abbb;
+		a{
+			display:inline-block;
+			vertical-align: middle;
+			margin: 0 6px;
+			color: #1d1d1b;
+			@include transition(color .24s);
+			&:hover{
+				color: white;
+			}
+		}
+	}
+}
+
+.ppl_pop_up{
+	display:none;
+	position: absolute;
+	z-index: 20;
+	right:25rem;
+	top:8rem;
+	width: 56rem;
+	text-align: center;
+	font-family: "Bebas_Neue_Cyrillic2";
+}
+
+.ppl_pop_up_mob{
+	display:none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 34;
+	left: 0;
+	top: 0;
+	text-align: center;
+	font-family: "Bebas_Neue_Cyrillic2";
+	background-color: rgba(0, 0, 0, .9);
+}
+
+.ppu_mob{
+	width: 50%;
+	position: absolute;
+	right: 4%;
+	top: 50%;
+	z-index: 5;
+	@include transform(translateY(-50%));
+}
+
+.ppu_mob_img{
+	position: absolute;
+	width: 68%;
+	top: -12%;
+	left: -8%;
+}
+
+.ppu{
+	&_role{
+		font-size:5.1rem;
+		color: #b90005;
+	}
+	&_name{
+		padding: 5rem 0;
+		text-align: center;
+		img{
+			width: 98rem;
+			position: relative;
+			left:50%;
+			margin-left:-100%;
+			vertical-align: top;
+		}
+	}
+	&_history{
+		color: #a8acbc;
+		font-size:2.5rem;
+		line-height:2.2rem;
+		span{
+			font-size:1.5rem;
+			line-height:1rem;
+		}
+	}
+	&_email{
+		padding: 1.7rem 0;
+		color: #a8acbc;
+		font-size:2.5rem;
+		line-height:2.2rem;
+		a{
+			color:#b90005;
+			@include transition(color .24s);
+			&:hover{
+				color:white;
+			}
+		}
+	}
+}
+
+.mob_wb_work{
+	display: none;
+	position: absolute;
+	z-index: 60;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .9);
+	font-size: 4rem;
+	color: #a7abbb;
+	padding: 1.5rem 2rem 2.2rem;
+	@include box-sizing(border-box);
+	.wb_cont{
+		opacity: 1;
+		position: relative;
+		.categ_name {
+			font-size: 4.4rem;
+		}
+		.work_name{
+			font-size: 12rem;
+		}
+		.work_info{
+			font-size: 5rem;
+			line-height: 4.4rem;
+			span{
+				font-size: 3.4rem;
+				line-height: 2.8rem;
+			}
+		}
+		.award_blocks{
+			width: 50%;
+			padding-top: 6rem;
+			float:right;
+		}
+		.award_block{
+			&:before,
+			&:after{
+				height: 12rem;
+				margin-top: -6rem;
+			}
+			.text_top{
+				font-size: 5rem;
+			}
+			.text_mid{
+				font-size: 6rem;
+				line-height: 6rem;
+			}
+			.text_bottom{
+				font-size: 3.6rem;
+			}
+		}
+		.btn{
+			right: auto;
+			left: 2rem;
+			font-size: 10rem;
+			padding: 0.2rem 4rem 0.2rem 4rem;
+		}
+	}
+}

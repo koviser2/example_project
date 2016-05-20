@@ -1,0 +1,25 @@
+- if skin
+	- url ||= "" 
+	.wb_cont
+		.categ_name= skin.try(:category).try(:name)
+		.work_name= skin.try(:name)
+		.work_info
+			.add_block
+				%span client
+				= skin.try(:client)
+			.add_block
+				%span brand
+				= skin.try(:brand)
+			.add_block
+				%span team
+				= skin.try(:team).try(:director)
+				= skin.try(:team).try(:operator)
+			.add_block
+				%span awards
+				.award_blocks
+					.award_block
+						.text_top Short-list in category “production”
+						.text_mid cinematography
+						.text_bottom 2013
+		.btn{class: btn_left ? "btn_left" : "" , data: {url: url}}
+			%span Watch video

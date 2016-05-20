@@ -1,0 +1,174 @@
+header{
+	display: block;
+	height: 100%;
+	opacity: 0;
+	position: relative;
+	z-index: 1;
+	@include transition(opacity 1.8s .5s);
+	&.active{
+		opacity: 1;
+		z-index: 5;
+	}
+}
+
+.logo{
+	cursor:pointer;
+	position: absolute;
+	left: $mg_border_size;
+	top: 50%;
+	margin-top: -1.25rem;
+	width: 17.7rem;
+	height: 2.5rem;
+	background: asset-url("logo_small.svg") no-repeat center;
+	background-size: contain;
+}
+
+nav,
+nav .item{
+	display: inline-block;
+	vertical-align: top;
+}
+
+nav{
+	.item{
+		min-width: 16px;
+		position: relative;
+		padding: 0 1.8rem;
+		cursor:pointer;
+		color: black;
+		&:before{
+			content:"";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 1rem;
+			height: 1rem;
+			margin: -.5rem 0 0 -.5rem;
+			background-color: #a7abbb;
+			border-radius: 50%;
+			opacity:1;
+			@include transition(all .3s);
+		}
+		.title{
+			font-size: 0rem;
+			opacity:0;
+			position: relative;
+			vertical-align: top;
+			text-transform: uppercase;
+			@include transition(all .3s);
+		}
+		&.active,
+		&:hover{
+			.title{
+				font-size: 2.1rem;
+				opacity:1;
+			}
+			&:before{
+				opacity:0;
+			}
+		}
+		&.active{
+			cursor:default;
+		}
+		&:hover{
+			color: #a7abbb;
+			&.active{
+				color: black;
+			}
+		}
+	}
+}
+
+.add_info{
+	position: absolute;
+	top: 0;
+	right: $mg_border_size;
+}
+
+.langs,
+.contacts{
+	float: right;
+	a{
+		font-size: 2.1rem;
+		position: relative;
+		vertical-align: top;
+		color: #a7abbb;
+		text-transform: uppercase;
+		@include transition(color .24s);
+		&:hover{
+			color: black;
+		}
+		&.active{
+			color: black;
+		}
+	}
+}
+
+.contacts{
+	a{
+		margin-right: 3.5rem
+	}
+}
+
+.langs{
+	a{
+		margin-left: 1rem;
+		&:first-child{
+			margin-left: 0;
+		}
+	}
+}
+
+.burger{
+	position: fixed;
+	top: $mg_border_size + 8rem;
+	right: $mg_border_size + 8rem;
+	z-index: 20;
+	cursor: pointer;
+	width: 21px;
+	height: 20px;
+	background-image: asset-url("burger.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	&.active{
+		background-image: asset-url("close.png");
+	}
+}
+
+.mob_nav{
+	display: none;
+	position: fixed;
+	top: $mg_mob_size;
+	right: $mg_mob_size;
+	bottom: $mg_mob_size;
+	left: $mg_mob_size;
+	z-index: 18;
+	background-color: rgba(0, 0, 0, .9);
+	nav{
+		position: absolute;
+		top:50%;
+		left:50%;
+		@include transform(translate(-50%, -50%));
+		.item{
+			display: block;
+			line-height: 10rem;
+			padding: 2rem 0;
+			&:before{
+				display:none;
+			}
+			.title{
+				opacity: 1;
+				font-size: 10rem;
+				color: #a8acbc;
+			}
+			&:hover,
+			&.active{
+				.title{
+					font-size: 10rem;
+					color: white;
+				}
+			}
+		}
+	}
+}

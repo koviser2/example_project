@@ -1,0 +1,13 @@
+ua:
+  lng:
+    ua: 'UA'
+    en: 'EN'
+  layout:
+    close: "CLOSE"
+    prev: "PREV"
+    next: "NEXT"
+    scroll_down: "Scroll down"
+    back:
+      work: "BACK TO WORK"
+      locations: "BACK TO LOCATIONS"
+      about: "BACK TO ABOUT"

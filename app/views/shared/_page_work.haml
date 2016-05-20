@@ -1,0 +1,17 @@
+.mob_wb_categ.mb_ad
+	.wb_menu_block
+		- categories.each do |category|
+			.wb_menu_item{class: (@show_work_id == category.id) ? "active" : ""}
+				=link_to '#', data: {id: category.id, url:  show_work_path(locale, category.id)} do
+					%span= category.name
+.wb_pop_up
+.wb_content
+	= render partial: "shared/work/work_menu"
+	.mob_wb_categ_btn.mb_ad categories
+	.mob_wb_work.mb_ad
+	.unhover_block
+	.main_work_block.active
+		= render partial: "shared/work/work_main_categ"
+	.wb_cats
+		.wb_cat
+			.work_block

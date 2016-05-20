@@ -1,0 +1,42 @@
+.ppls_main
+	.mob_about_info_btn.mb_ad info
+	.ppl_pop_up.mb_des
+	.ppl_pop_up_mob.mb_ad
+	=image_tag 'about/text_about.png', class: 'title_about'
+	.ppls_grad
+	.ppls_wrap.ppls_slider
+		- about_users.each do |user|
+			.ppl{class: (user.eql? user_first) ? "front" : "", data: {id: user.id}}
+				.ppl_block
+					= image_tag user.picture.little, class: 'ppl_img', data: {big: image_url(user.picture), small: image_url(user.picture.little)}
+	.ppls_wrap.ppls_names
+		- about_users.each do |user|
+			.ppl{class: (user.eql? user_first) ? "front" : ""}
+				.ppl_name
+					%div= user.first_name
+					.srname= user.last_name
+	.about_footer.mb_des
+		.text= about_main.describe.html_safe
+		.about_r_block.table
+			.td
+				=image_tag 'about/R.png', class: 'r'
+			.td
+				.r_text= about_main.adress.html_safe
+				.r_bottom
+					=link_to "enquiries", about_main.enquiries, target: "_blank"
+					=link_to "bidding requests", about_main.bidding, target: "_blank"
+					=link_to "facebook", about_main.facebook, target: "_blank"
+					=link_to "vimeo", about_main.vimeo, target: "_blank"
+	.mob_about_info
+		.about_footer
+			.text= about_main.describe.html_safe
+			.about_r_block.table
+				.td
+					=image_tag 'about/R.png', class: 'r'
+				.td
+					.r_text= about_main.adress.html_safe
+					.r_bottom
+						=link_to "enquiries", about_main.enquiries, target: "_blank"
+						=link_to "bidding requests", about_main.bidding, target: "_blank"
+						=link_to "facebook", about_main.facebook, target: "_blank"
+						=link_to "vimeo", about_main.vimeo, target: "_blank"

@@ -1,0 +1,27 @@
+one:
+  name: "category 1"
+  show: true
+
+two:
+  name: "category 2"
+  show: true
+
+three:
+  name: "category 3"
+  show: true
+
+four:
+  name: "category 4"
+  show: false
+
+five:
+  name: "category 5"
+  show: true
+
+six:
+  name: "category 6"
+  show: true
+
+seven:
+  name: "category 7"
+  show: true

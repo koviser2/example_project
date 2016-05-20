@@ -1,0 +1,155 @@
+.without_sidebar{
+  form{    
+    fieldset.enother_language{
+      padding: 0;
+      width: 74%!important;
+      margin-top: -9px;
+      background: $table_back;
+      @include clear(33px);
+      &:after{
+        background: white;
+        border-radius: 0;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+      fieldset, fieldset.actions{
+        padding: 0 34px 5px;
+        width: calc(100% - 68px);
+        background: white;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        z-index: 10;
+        position:relative;
+        bottom: -5px;
+      }
+      fieldset.actions{
+        border-radius: 0;
+        padding-bottom: 0;
+        bottom: 0;
+      }
+      .ui-corner-all{
+        background: none;
+        border: 0;
+        margin-top: 0;
+      }
+    }
+    .next_language{
+      position: relative;
+      background: $ui_next_but;
+      line-height: 40px;
+      padding: 0 50px 0 22px;
+      border-radius: 5px;
+      font-size: 16px;
+      color: white;
+      font-family: "proxima_nova_rgbold";
+      margin-right: 19px;
+      cursor: pointer;
+      max-width: 150px;
+      @include transition(all $header_time);
+      white-space: nowrap;
+      &:hover{
+        background: $ui_next_hover;
+      }
+      &:after{
+        @include s("next");
+        content: "";
+        position: absolute;
+        right: 22px;
+        top: 50%;
+        margin-top: image-height("admin/next.png")/-2;
+      }
+    }
+    .next_hide{
+      max-width: 0px;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      float: left;
+    }
+  }
+}
+
+.ui-tabs{
+  padding:0;
+  .ui-tabs-nav{
+    position: relative;
+    bottom: -9px;
+    padding:0;
+    z-index: 5;
+    background: $table_back;
+    li{
+      display:inline-block;
+      margin: 0;
+      padding: 0;
+    }
+    a{
+      font-size:16px;
+      font-family: "proxima_nova_regular";
+      color: $filter_activ_color;     
+      border-top-left-radius:5px;
+      border-top-right-radius:5px;
+      @include transition(background $header_time);
+      outline: 0;
+      &:hover{
+        background-color: $ui_tab_hover;
+      }
+      &:before{
+        @include s("ok_all");
+        content: "";
+        margin-right: 0;
+        max-width: 0;
+        overflow: hidden;
+        @include transition(all $header_time);
+      }
+    }
+    a.ui-tabs-all{
+      &:before{
+        margin-right: 7px;
+        max-width: image-width("admin/ok_all.png");
+      }
+    }
+  }
+  .ui-tabs-active{
+    margin-bottom: -5px;
+    a{
+      font-family: "proxima_nova_rgbold";
+      background-color: white;
+      &:hover{
+        background: white;
+      }      
+    }
+  }
+  
+}
+
+
+  .ui-tabs .ui-tabs-nav .ui-tabs-anchor{padding: 12px 34px 17px}
+
+    
+  .ui-widget-header{
+    background:none;
+  }
+
+  .ui-state-default, .ui-widget-content, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+    background:none;
+    border:0;
+  }
+
+  .product_size_input{
+    
+  }
+
+  .ui-widget-content{
+    border:0;
+  }
+.ui-corner-all{
+  background: white;
+  border: 1px solid $checkbox_border;
+  margin-top: 3px;
+  .ui-state-active{
+    font-weight: bold;
+  }
+  .ui-datepicker-header{
+    border: 0;
+  }
+}

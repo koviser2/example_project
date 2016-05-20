@@ -1,0 +1,7 @@
+one: 
+  email: "test1@test.com"
+  role: "Admin"
+
+two: 
+  email: "test2@test.com"
+  role: "Manager"

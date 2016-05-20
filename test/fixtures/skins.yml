@@ -1,0 +1,95 @@
+one:
+  name: "skin1"
+  category: one
+  client: "client1"
+  brand: "brand1"
+  video: "video1"
+  team: one
+
+two:
+  name: "skin1"
+  category: one
+  client: "client2"
+  brand: "brand2"
+  video: "video2"
+  team: two
+
+three:
+  name: "skin1"
+  category: two
+  client: "client3"
+  brand: "brand3"
+  video: "video3"
+  team: three
+
+four:
+  name: "skin1"
+  category: two
+  client: "client4"
+  brand: "brand4"
+  video: "video4"
+  team: one
+
+five:
+  name: "skin1"
+  category: two
+  client: "client5"
+  brand: "brand5"
+  video: "video5"
+  team: two
+
+six:
+  name: "skin1"
+  category: four
+  client: "client6"
+  brand: "brand6"
+  video: "video6"
+  team: three
+
+seven:
+  name: "skin1"
+  category: five
+  client: "client7"
+  brand: "brand7"
+  video: "video7"
+  team: one
+
+eight:
+  name: "skin1"
+  category: six
+  client: "client8"
+  brand: "brand8"
+  video: "video8"
+  team: two
+
+nine:
+  name: "skin1"
+  category: seven
+  client: "client9"
+  brand: "brand9"
+  video: "video9"
+  team: three
+
+ten:
+  name: "skin1"
+  category: three
+  client: "client10"
+  brand: "brand10"
+  video: "video10"
+  team: one
+
+eleven:
+  name: "skin1"
+  category: one
+  client: "client11"
+  brand: "brand11"
+  video: "video11"
+  team: two
+
+twelve:
+  name: "skin1"
+  category: six
+  client: "client12"
+  brand: "brand12"
+  video: "video12"
+  team: one

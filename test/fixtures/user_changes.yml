@@ -1,0 +1,15 @@
+one:
+  admin_user: one
+  tableedit: one (Skin)
+
+two:
+  admin_user: one
+  tableedit: two (Skin)
+
+three:
+  admin_user: two
+  tableedit: one (Skin)
+
+four:
+  admin_user: one
+  tableedit: three (Skin)

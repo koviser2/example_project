@@ -1,0 +1,103 @@
+// @media all and (orientation: landscape){
+// 	.logo{
+// 		background: black;
+// 	}
+// }
+@media all and (orientation: portrait){
+	.adapt{
+		display:block;
+	}
+}
+@media all and (min-width: 1001px){
+	.mb_ad{
+		display: none !important;
+	}
+}
+@media all and (max-width: 1000px){
+	// body{
+	// 	margin-top: 100px;
+	// }
+	.ppl_name{
+		font-size: 3.4rem;
+		line-height: 3.2rem;
+		.srname{
+			font-size: 5rem;
+			line-height: 4.7rem;
+		}
+	}
+	.ppu{
+		&_role{
+			font-size: 6.4rem;
+		}
+		&_history,
+		&_email{
+			font-size: 4.8rem;
+			line-height: 4.8rem;
+		}
+		&_history{
+			span{
+				font-size: 3.8rem;
+				line-height: 3.8rem;
+			}
+		}
+		&_name{
+			padding: 2rem 0;
+		}
+	}
+	.mb_des{
+		display: none !important;
+	}
+	.ppls_wrap{
+		left: 0;
+	}
+	.page{
+		padding: $mg_mob_size;
+	}
+	.mg{
+		&_left,
+		&_right{
+			width: $mg_mob_size;
+		}
+		&_top,
+		&_bottom{
+			height: $mg_mob_size;
+		}
+		&_left,
+		&_right,
+		&_top,
+		&_bottom{
+			line-height: $mg_mob_size;
+		}
+	}
+	.logo{
+		left: $mg_mob_size;
+		margin-top: -3rem;
+		width: 26rem;
+		height: 6rem;
+	}
+	.add_info{
+		right: $mg_mob_size;
+		a{
+			font-size: 4rem;
+		}
+	}
+	.navig_main a span{
+		font-size: 4rem;
+	}
+	.loc_nav{
+		top: 14.8rem;
+	}
+	.loc_nav.loc_nav_left{
+		left: 14.8rem;
+	}
+	.about_footer{
+		display:none;
+	}
+	.wb_col .pic,
+	.cloud{
+		animation: none 0 !important;
+	}
+	.work_block .wb_cont{
+		display: none;
+	}
+}

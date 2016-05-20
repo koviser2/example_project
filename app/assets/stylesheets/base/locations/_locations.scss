@@ -1,0 +1,137 @@
+.loc_svg{
+	position: absolute;
+	z-index: 3;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	.loc_text{
+		font-size: 290px;
+		letter-spacing: -16px;
+		font-family: "HelveticaNeueLTStd-BdCn", sans-serif;
+	}
+}
+.loc_footer{
+	display:none;
+	position: absolute;
+	left:50%;
+	bottom: $mg_border_size*1.6;
+	color: #a8acbc;
+	font-family: "Bebas_Neue_Cyrillic2";
+	z-index: 5;
+	width: 116rem;
+	text-align: center;
+	font-size: 2.4rem;
+	line-height: 0.9em;
+	text-shadow: 0 0 1rem black, 0 0 0.9rem black, 0 0 0.9rem black, 0 0 0.9rem black;
+	@include transform(translate(-50%,0));
+}
+
+.loc_nav{
+	// display: none;
+	position: absolute;
+	z-index: 2;
+	opacity: 0;
+	top: $mg_border_size*1.8;
+	left: 50%;
+	@include transition(all .3s);
+	@include transform-origin(0, 50%);
+	@include transform(translate(0, -50%) rotate(90deg));
+	&.active{
+		// display: block;
+		opacity: 1;
+		z-index: 35;
+	}
+	&.loc_nav_left{
+		top: 50%;
+		left: $mg_border_size*1.8;
+		@include transform(translate(0, -50%));
+	}
+	&_item{
+		padding: 0.2rem 0;
+		a{
+			display: inline-block;
+			vertical-align: top;
+			overflow: hidden;
+			span{
+				display: inline-block;
+				vertical-align: bottom;
+				position: relative;
+				color: #a8acbc;
+				font-family: "Bebas_Neue_Cyrillic2";
+				@include transition(color .24s);
+			}
+			&:hover span{
+				color: white;
+			}
+			&.active,
+			&.active:hover{
+				span{
+					color: #b90005;
+				}
+			}
+		}
+	}
+}
+
+
+.loc_nav_size1{
+	line-height: 15.2rem;
+	span{
+		font-size: 20.3rem;
+	}
+}
+.loc_nav_size2{
+	line-height: 6.6rem;
+	span{
+		font-size: 8rem;
+	}
+}
+.loc_nav_size3{
+		line-height: 6.6rem;
+	span{
+		font-size: 7.8rem;
+	}
+}
+.loc_nav_size4{
+	line-height: 3.6rem;
+	span{
+		font-size: 4.2rem;
+	}
+}
+.loc_nav_size5{
+	line-height: 8.6rem;
+	span{
+		font-size: 10.9rem;
+	}
+}
+.loc_nav_size6{
+	line-height: 3.2rem;
+	span{
+		font-size: 3.5rem;
+	}
+}
+.loc_nav_size7{
+	line-height: 3.8rem;
+	span{
+		font-size: 4.7rem;
+	}
+}
+.loc_nav_size8{
+	line-height: 5.2rem;
+	span{
+		font-size: 6.7rem;
+	}
+}
+.loc_nav_size9{
+	line-height: 10.2rem;
+	span{
+		font-size: 13rem;
+	}
+}
+.loc_nav_size10{
+	line-height: 9rem;
+	span{
+		font-size: 11.1rem;
+	}
+}

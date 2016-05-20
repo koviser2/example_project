@@ -1,0 +1,11 @@
+//= require jquery-ui
+@import "select2";
+@import "admin/main";
+// TABS
+html,body{width:100%;height:100%;background-color: $table_back;}
+
+fieldset{
+  padding:0;
+  border:0;
+}
+

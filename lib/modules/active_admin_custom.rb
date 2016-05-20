@@ -1,0 +1,7 @@
+require 'modules/koviser/batch.rb'
+require 'modules/koviser/inputs.rb'
+require 'modules/koviser/table.rb'
+require 'modules/koviser/views.rb'
+require 'modules/koviser/form.rb'
+require 'modules/koviser/titlebar.rb'
+require 'modules/koviser/controller_actions.rb'

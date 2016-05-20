@@ -1,0 +1,71 @@
+.cke_chrome{
+    -webkit-box-shadow:none !important;
+    box-shadow:none !important;
+    background-image: none;
+    border:1px solid $filter_activ !important;
+    border-radius: 6px;
+    overflow:hidden;
+}
+
+.cke{
+    .cke_top{
+        -webkit-box-shadow:none;
+        box-shadow:none;
+        background-color: $input_edit;
+        background-image: none;
+        border-bottom:1px solid $filter_activ;
+    }
+    .cke_bottom{
+        display: none;
+    }
+}
+.cke .cke_toolgroup{
+    -webkit-box-shadow:none;
+    box-shadow:none;
+    background-color: $input_edit;
+    background-image: none;
+    border:0;
+}
+.cke .cke_wysiwyg_frame{
+    background-color: $input_edit;
+}
+.cke .cke_toolbar .cke_button{
+    border:1px solid transparent;
+    padding: 3px 5px;
+    -webkit-box-shadow:none;
+    box-shadow:none;
+    background:none;
+    .cke_button_icon{
+        background-image: asset-url("ckeditor_icons.png") !important;
+    }
+    &:hover{
+        border:1px solid #d2d3d5;
+    }
+    &.cke_button_on{
+        .cke_button__bold_icon{
+            background-position: 0 -2041px !important;
+        }
+        .cke_button__italic_icon{
+            background-position: 0 -2066px !important;
+        }
+        .cke_button__justifyleft_icon{
+            background-position: 0 -2091px !important;
+        }
+        .cke_button__justifycenter_icon{
+            background-position: 0 -2115px !important;
+        }
+        .cke_button__justifyright_icon{
+            background-position: 0 -2139px !important;
+        }
+        .cke_button__numberedlist_icon{
+            background-position: 0 -2165px !important;
+        }
+        .cke_button__bulletedlist_icon{
+            background-position: 0 -2189px !important;
+        }
+    }
+}
+.cke_button__video_icon{
+    background-position: 0 -576px !important;
+}
+

@@ -1,0 +1,47 @@
+rule1:
+  award: one
+  skin: one
+
+rule2:
+  award: one
+  skin: two
+
+rule3:
+  award: one
+  skin: three
+
+rule4:
+  award: two
+  skin: one
+
+rule5:
+  award: two
+  skin: two
+
+rule6:
+  award: two
+  skin: three
+
+rule7:
+  award: three
+  skin: one
+
+rule8:
+  award: three
+  skin: two
+
+rule9:
+  award: three
+  skin: three
+
+rule10:
+  award: one
+  skin: four
+
+rule11:
+  award: one
+  skin: five
+
+rule12:
+  award: one
+  skin: six

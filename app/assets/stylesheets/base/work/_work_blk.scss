@@ -1,0 +1,84 @@
+.wb{
+	&_blk{
+		position: absolute;
+		z-index: 6;
+		top:0;
+		left:0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		&_box_tl,
+		&_box_tr,
+		&_box_bl,
+		&_box_br{
+			position: absolute;
+			z-index: 5;
+			width:50%;
+			height: 100%;
+			background-color: $brd_color;
+		}
+		&_box_tl{
+			top: 0;
+			left: 0;
+		}
+		&_box_tr{
+			top: 0;
+			right: 0;
+		}
+		&_box_bl{
+			bottom: 0;
+			left: 0;
+		}
+		&_box_br{
+			bottom: 0;
+			right: 0;
+		}
+		&_line_tl,
+		&_line_tr,
+		&_line_tl2,
+		&_line_tr2,
+		&_line_bl,
+		&_line_br,
+		&_line_bl2,
+		&_line_br2{
+			position: absolute;
+			z-index: 5;
+			width:50%;
+			height: $wb_line;
+			background-color: $brd_color;
+			margin-top: -$wb_line/2;
+		}
+		&_line_tl{
+			top: $part_height_box;
+			left: 0;
+		}
+		&_line_tr{
+			top: $part_height_box;
+			right: 0;
+		}
+		&_line_tl2{
+			top: $part_height_box*2;
+			left: 0;
+		}
+		&_line_tr2{
+			top: $part_height_box*2;
+			right: 0;
+		}
+		&_line_bl{
+			bottom: $pos_line;
+			left: 0;
+		}
+		&_line_br{
+			bottom: $pos_line;
+			right: 0;
+		}
+		&_line_bl2{
+			bottom: $pos_line2;
+			left: 0;
+		}
+		&_line_br2{
+			bottom: $pos_line2;
+			right: 0;
+		}
+	}
+}

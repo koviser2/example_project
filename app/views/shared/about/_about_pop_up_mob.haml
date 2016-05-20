@@ -1,0 +1,11 @@
+.ppu_mob
+	.ppu_role= user.position
+	.ppu_name
+		=image_tag user.picture_name
+	.ppu_history
+		%span History
+		= user.describe
+	.ppu_email
+		%span E-mail:
+		=link_to user.email, "mailto:#{user.email}"
+=image_tag user.picture.little, class: "ppu_mob_img"

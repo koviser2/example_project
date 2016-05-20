@@ -1,0 +1,71 @@
+!!!
+%html{lang: I18n.locale.to_s}
+	%head
+		%title Pronto Films
+		%meta{name: 'viewport', content: "width=device-width, initial-scale=1"}
+		%meta{content: work_page, property: "work_page"}
+		%meta{content: location_page, property: "location_page"}
+		%meta{content: casting_page, property: "casting_page"}
+		%meta{content: casting_type, property: "casting_type"}
+		= favicon_link_tag '/favicon.png'
+		= stylesheet_link_tag  'application', media: 'all'
+		= csrf_meta_tags
+	%body
+		.adapt
+			.block
+				= image_tag 'rotation.png'
+				.text
+					Please, turn your device sideways
+					%br
+					to view proper site design
+		.main_grid
+			.mg_border.mg_top
+				= render partial: "shared/header"
+				.wb_pop_up_close
+					%span.close= t "layout.close"
+			.mg_border.mg_left
+				.navig_main.work_nav_btn.wnb_left
+					= link_to "", class: "prev_work_btn navig_btns navig_prev" do
+						%span= t "layout.prev"
+				.navig_main.loc_nav_btn.lnb_left
+					= link_to "", class: "prev_loc_btn navig_btns navig_prev" do
+						%span= t "layout.prev"
+				.navig_main.about_nav_btn.abo_left
+					= link_to "", class: "prev_about_btn navig_btns navig_prev" do
+						%span= t "layout.prev"
+				.navig_main.casting_nav_btn.cas_left
+					= link_to "", class: "prev_casting_btn navig_btns navig_prev" do
+						%span= t "layout.prev"
+			.mg_border.mg_right
+				.navig_main.work_nav_btn.wnb_right
+					= link_to "", class: "next_work_btn navig_btns navig_next" do
+						%span= t "layout.next"
+				.navig_main.loc_nav_btn.lnb_right
+					= link_to "", class: "next_loc_btn navig_btns navig_next" do
+						%span= t "layout.next"
+				.navig_main.about_nav_btn.abo_right
+					= link_to "", class: "next_about_btn navig_btns navig_next" do
+						%span= t "layout.next"
+				.navig_main.casting_nav_btn.cas_right
+					= link_to "", class: "next_casting_btn navig_btns navig_next" do
+						%span= t "layout.next"
+			.mg_border.mg_bottom
+				.scroll_down
+					%span.title= t "layout.scroll_down"
+				.navig_main.work_nav_btn.wnb_bottom
+					= link_to "", class: "back_work_btn", data: {url: work_path} do
+						%span= t "layout.back.work"
+				.navig_main.loc_nav_btn.lnb_bottom
+					= link_to "", class: "back_loc_btn", data: {url: locations_path} do
+						%span= t "layout.back.locations"
+				.navig_main.about_nav_btn.abo_bottom
+					= link_to "", class: "back_about_btn" do
+						%span= t "layout.back.about"
+				.navig_main.casting_nav_btn.cas_bottom
+					= link_to "", class: "back_casting_btn", data: {url: casting_path} do
+						%span= t "layout.back.casting"
+			= yield
+		= javascript_include_tag 'application'
+
+
+
