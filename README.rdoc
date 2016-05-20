@@ -1,5 +1,5 @@
 == README
 
 ==========
-	It's ma old project, which i finished about 6 - 8 months ago.
+	It's my little old project, which i finished about 6 - 8 months ago.
 ==========
